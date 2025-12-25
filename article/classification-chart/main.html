@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto Classification Chart Articles | Visual Lotto Board Insights</title>
+    <meta name="description" content="Learn how to use lotto classification charts effectively. Explore guides on counterparts, bonanza, malta, key numbers, and more.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2282c7;
+            --dark-blue: #1a5fa0;
+            --secondary-green: #059669;
+            --accent-gold: #f59e0b;
+            --bg-light-gray: #e8eaed;
+            --bg-lighter: #f9fafb;
+            --border-gray: #d0d0d0;
+            --bg-card: #f0f2f5;
+            --dark-bg: #1f2937;
+            --text-dark: #111827;
+            --text-light: #6b7280;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-lighter);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Category Hero */
+        .category-hero {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .category-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .category-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-hero p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .article-count {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            margin-top: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--white);
+            border-radius: 16px;
+            margin: 4rem auto;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+        }
+
+        .empty-state-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.4;
+        }
+
+        .empty-state h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .empty-state p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .category-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="../../index.html" class="logo">Visual Lotto Board <span>Insights</span></a>
+            <nav>
+                <ul>
+                    <li><a href="https://visuallottoboard.com">Main Site</a></li>
+                    <li><a href="../../index.html#categories">Categories</a></li>
+                    <li><a href="../../index.html#featured">Articles</a></li>
+                    <li><a href="https://app.visuallottoboard.com">Pro App</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Category Hero -->
+    <section class="category-hero">
+        <div class="category-hero-content">
+            <div class="breadcrumb">
+                <a href="../../index.html">Blog</a> / Lotto Classification Chart
+            </div>
+            <div class="category-icon">📊</div>
+            <h1>Lotto Classification Chart</h1>
+            <p>Master classification charts to understand number relationships, counterparts, bonanza, malta, key numbers, shadow partners, and equivalents for better lotto analysis</p>
+            <span class="article-count">Coming Soon</span>
+        </div>
+    </section>
+
+    <!-- Empty State -->
+    <section class="empty-state">
+        <div class="empty-state-icon">📊</div>
+        <h3>Articles Coming Soon!</h3>
+        <p>We're working on comprehensive guides about lotto classification charts. Check back soon for expert tutorials on counterparts, bonanza, malta, key numbers, and more classification techniques.</p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Use Classification Charts Now</h2>
+            <p>While we prepare detailed guides, start using our free classification chart tool to analyze number relationships</p>
+            <a href="https://lottoclassificationchart.visuallottoboard.com" class="cta-button">Access Classification Chart</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Visual Lotto Board</h4>
+                <p>Nigeria's leading lottery information platform for Premier Lotto, Ghana Lotto, and more.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="https://visuallottoboard.com">Home</a></li>
+                    <li><a href="https://app.visuallottoboard.com">Pro Forecast App</a></li>
+                    <li><a href="https://lottoclassificationchart.visuallottoboard.com">Classification Chart</a></li>
+                    <li><a href="../../index.html">Blog Home</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Blog Categories</h4>
+                <ul>
+                    <li><a href="../lotto-forecast-app/main.html">Lotto Forecast App</a></li>
+                    <li><a href="main.html">Classification Chart</a></li>
+                    <li><a href="../baba-ijebu-results/main.html">Baba Ijebu Results</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Visual Lotto Board. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
