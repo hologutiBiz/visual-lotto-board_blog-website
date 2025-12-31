@@ -15,15 +15,30 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Lotto Board Insights - Expert Lotto Forecasting Tips & Guides</title>
-    <meta name="description" content="Your trusted source for lotto forecasting tips, feature guides, and winning strategies. Learn how to use Visual Lotto Board tools effectively.">
+    <title>Blog | Visual Lotto Board Insights</title>
+    <meta name="description" content="Lotto insights, Announcements & forecasting tips.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta property="og:url" content="https://blog.visuallottoboard.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog | Visual Lotto Board Insights">
+    <meta property="og:description" content="Lotto insights, Announcements & forecasting tips.">
+    <meta property="og:image" content="https://res.cloudinary.com/ddatfadov/image/upload/v1767186280/VLB-blog-banner_qscoof.png">
+
+    <!-- twitter-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@insights_HBC">
+    <meta name="twitter:title" content="Blog | Visual Lotto Board Insights">
+    <meta name="twitter:description" content="Lotto insights, Announcements & forecasting tips.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/ddatfadov/image/upload/v1767186280/VLB-blog-banner_qscoof.png">
+    <meta name="twitter:url" content="https://blog.visuallottoboard.com/">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="test.css">
     
     <style>
         * {
@@ -45,6 +60,7 @@
             --text-dark: #111827;
             --text-light: #6b7280;
             --white: #ffffff;
+            /* --accent: #10b981; Emerald Green */
         }
 
         body {
@@ -72,6 +88,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            display: flex;
+    justify-content: space-between;
+    align-items: center;
         }
 
         .logo {
@@ -91,6 +110,87 @@
             gap: 2rem;
         }
 
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .dropdown:hover .dropbtn {
+            color: var(--text-main);
+        }
+        .dropbtn {
+            background: none;
+            border: none;
+            color: var(--text-dim);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            cursor: pointer;
+            padding: 10px 15px;
+            transition: var(--transition);
+        }
+
+        .dropbtn .arrow {
+            font-size: 0.7rem;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 260px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #2282c7;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .dropdown-content a strong {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--accent); /* Emerald color from earlier */
+        }
+
+        .dropdown-content a span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(16, 185, 129, 0.1);
+        }
+
+        /* Smooth Animation */
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         nav a {
             color: var(--white);
             text-decoration: none;
@@ -100,6 +200,21 @@
 
         nav a:hover {
             color: var(--accent-gold);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            background-color: #f5f5dc;
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
         }
 
         /* Hero Section */
@@ -275,17 +390,18 @@
 
         .article-image {
             width: 100%;
-            height: 220px;
+
+            height: 220px; 
             background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
+            color: var(--white); 
             font-size: 4rem;
             position: relative;
-            overflow: hidden;
+            overflow: hidden; 
         }
-
+/* 
         .article-image::before {
             content: '';
             position: absolute;
@@ -294,7 +410,7 @@
             right: 0;
             bottom: 0;
             background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 60%);
-        }
+        } */
 
         .article-content {
             padding: 2rem;
@@ -566,6 +682,8 @@
             font-size: 0.9rem;
         }
 
+       
+
         /* Responsive */
         @media (max-width: 968px) {
             .about-content {
@@ -634,39 +752,60 @@
             <a href="/" class="logo">Visual Lotto Board <span>Insights</span></a>
             <nav>
                 <ul>
-                    <li><a href="https://visuallottoboard.com">Main Site</a></li>
-                    <li><a href="#categories">Categories</a></li>
-                    <!-- <li><a href="#featured">Articles</a></li> -->
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <div class="dropdown">
+                            <button class="dropbtn">Explore <span class="arrow">▼</span></button>
+                            <div class="dropdown-content">
+                                <a href="/article/forecast-app/main.html">
+                                    <strong>Forecast App</strong>
+                                    <span>Master the Predictor App</span>
+                                </a>
+                                <a href="/article/baba-ijebu/main.html">
+                                    <strong>Results & History</strong>
+                                    <span>Analysis of live and past draws</span>
+                                </a>
+                                <a href="/article/classification-chart/main.html">
+                                    <strong>Pattern Analytics</strong>
+                                    <span>Deep dives into our charts</span>
+                                </a>
+                                <!-- <hr class="menu-divider">
+                                <a href="/all-posts/" class="view-all">View All Articles &rarr;</a> -->
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="#">Announcements</a></li>
                 </ul>
             </nav>
+            <a href="https://visuallottoboard.com" class="btn-primary">Main Website</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Master the Art of Lotto Forecasting</h1>
-            <p>Expert guides, pro tips, and feature tutorials to help you make smarter predictions with Visual Lotto Board</p>
+            <h1>Seeing Beyond the Numbers</h1>
+            <p>Data-driven insights, pattern analysis, and the latest updates from the Visual Lotto Board community.</p>
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-number">1+</span>
-                    <span class="stat-label">Expert Articles</span>
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">Articles</span>
                 </div>
-                <div class="stat-item">
+                <!-- <div class="stat-item">
                     <span class="stat-number">3</span>
                     <span class="stat-label">Main Categories</span>
-                </div>
-                <div class="stat-item">
+                </div> -->
+                <!-- <div class="stat-item">
                     <span class="stat-number">Pro</span>
                     <span class="stat-label">Premium Features</span>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
 
+    <main>
     <!-- Categories Section -->
-    <section class="categories" id="categories">
+    <!-- <section class="categories" id="categories">
         <div class="section-header">
             <h2 class="section-title">Explore by Category</h2>
             <p class="section-subtitle">Find articles and guides tailored to your interests</p>
@@ -691,7 +830,7 @@
                 <span class="category-count">Coming Soon</span>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Featured Articles -->
     <section class="featured-section" id="featured">
@@ -700,19 +839,30 @@
                 <h2 class="section-title">Latest Articles & Guides</h2>
                 <p class="section-subtitle">Stay ahead with our expert insights and tutorials</p>
             </div>
+            <!-- <article class="blog-card">
+                    <div class="card-image" style="background-image: url('https://res.cloudinary.com/ddatfadov/image/upload/v1764840337/moving-number_interface-with_5_selected_kwxe2m.png');"></div>
+                    <div class="card-content">
+                        <span class="tag tag-guide">Tutorial</span>
+                        <h3>5 Hidden Features You Need to Try Today</h3>
+                        <p>Discover the power of custom pattern overlays and automated alerts...</p>
+                        <div class="card-meta">Dec 24 • 4 min read</div>
+                    </div>
+                </article> -->
             <div class="articles-grid">
                 <!-- Article 1 - Moving Numbers -->
                 <article class="article-card">
-                    <div class="article-image">🔢</div>
+                    <div class="article-image">
+                        <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1764840337/moving-number_interface-with_5_selected_kwxe2m.png" alt="">
+                    </div>
                     <div class="article-content">
                         <span class="article-category">Lotto Forecast App (Pro)</span>
                         <h3 class="article-title">
-                            <a href="article/lotto-forecast-app/moving-number.html">Unlock Smarter Predictions with Moving Numbers</a>
+                            <a href="article/forecast-app/moving-number.html">Unlock Smarter Predictions with Moving Numbers</a>
                         </h3>
                         <p class="article-excerpt">Discover how Moving Numbers can transform your forecasting approach by identifying number groups that historically appear together across consecutive draws...</p>
                         <div class="article-meta">
                             <span class="article-date">📅 November 2024</span>
-                            <a href="article/lotto-forecast-app/moving-number.html" class="read-more">Read More →</a>
+                            <a href="article/forecast-app/moving-number.html" class="read-more">Read More →</a>
                         </div>
                     </div>
                 </article>
@@ -723,12 +873,12 @@
                     <div class="article-content">
                         <span class="article-category">Lotto Forecast App (Pro)</span>
                         <h3 class="article-title">
-                            <a href="/article/lotto-forecast-app/registration-guide.html">Complete Guide to Registration & Subscription</a>
+                            <a href="/article/forecast-app/registration-guide.html">Complete Guide to Registration & Subscription</a>
                         </h3>
                         <p class="article-excerpt">Everything you need to know about getting started with Visual Lotto Board Pro. Learn about registration, subscription plans, payment methods, and more...</p>
                         <div class="article-meta">
                             <span class="article-date">📅 December 2024</span>
-                            <a href="article/lotto-forecast-app/registration-guide.html" class="read-more">Read More →</a>
+                            <a href="article/forecast-app/registration-guide.html" class="read-more">Read More →</a>
                         </div>
                     </div>
                 </article>
@@ -754,7 +904,7 @@
                     <div class="article-content">
                         <span class="article-category">Platform Updates</span>
                         <h3 class="article-title">
-                            <a href="#">Feature Announcements</a>
+                            <a href="#">Announcements</a>
                         </h3>
                         <p class="article-excerpt">Be the first to know about new features, updates, and improvements to Visual Lotto Board. Subscribe to stay informed...</p>
                         <div class="article-meta">
@@ -811,6 +961,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -826,13 +977,14 @@
                     <li><a href="https://app.visuallottoboard.com">Lotto Forecast App Login</a></li>
                     <li><a href="https://lottoclassificationchart.visuallottoboard.com">Lotto Classification Chart</a></li>
                     <li><a href="https://premier-lotto-babaijebu-results.visuallottoboard.com">Baba-Ijebu Lotto Results</a></li>
+                    <li><a href="https://green-lotto-result.visuallottoboard.com">GreenLotto Results</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Blog Categories</h4>
                 <ul>
-                    <li><a href="/article/lotto-forecast-app/main.html">Lotto Forecast App</a></li>
-                    <li><a href="/article/classification-chart/">Classification Chart</a></li>
+                    <li><a href="/article/forecast-app/main.html">Forecast App</a></li>
+                    <li><a href="/article/classification-chart/main.html">Classification Chart</a></li>
                     <li><a href="/article/baba-ijebu/main.html">Baba Ijebu</a></li>
                     <!-- <li><a href="#categories">Tips & Strategies</a></li> -->
                 </ul>
