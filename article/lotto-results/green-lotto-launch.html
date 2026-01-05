@@ -37,7 +37,7 @@
         }
 
         :root {
-            /* --primary-blue: #2282c7;
+            --primary-blue: #2282c7;
             --dark-blue: #1a5fa0;
             --secondary-green: #059669;
             --accent-gold: #f59e0b;
@@ -48,7 +48,7 @@
             --dark-bg: #1f2937;
             --text-dark: #111827;
             --text-light: #6b7280;
-            --white: #ffffff; */
+            --white: #ffffff;
         }
 
         body {
@@ -58,8 +58,12 @@
             background-color: var(--bg-lighter);
         }
 
+        header {
+            background-color: #ff0000;
+        }
+
         /* Header */
-        /* header {
+        header {
             background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
             color: var(--white);
             padding: 1rem 0;
@@ -67,16 +71,16 @@
             position: sticky;
             top: 0;
             z-index: 100;
-        } */
+        }
 
-        /* .header-container {
+        .header-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        } */
+        }
 
         .logo {
             font-size: 1.5rem;
@@ -157,7 +161,7 @@
             padding-bottom: 0.5rem;
             border-bottom: 2px solid #d1fae5;
         }
-
+       
         h3 {
             font-size: 1.5rem;
             color: #10b981;
@@ -176,7 +180,7 @@
 
         .feature-image {
             width: 100%;
-            max-width: 700px;
+            max-width: 300px;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -332,24 +336,26 @@
             <nav>
                 <ul>
                     <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../index.html#categories">Categories</a></li>
+                    <!-- <li><a href="../index.html#categories"></a></li>
                     <li><a href="https://app.visuallottoboard.com">Pro App</a></li>
+                    <li><a href="https://app.visuallottoboard.com">announcement</a></li> -->
+
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="container">
+    <main class="container">
         <article>
             <!-- Header -->
-            <header class="article-header">
+            <div class="article-header">
                 <div class="badge">NEW LAUNCH</div>
                 <h1>Introducing Green Lotto Results: Your Ultimate Green Lotto Companion</h1>
                 <p class="subtitle">The fastest, most reliable way to check Green Lotto results is finally here!</p>
-            </header>
+            </div>
 
             <!-- Hero Image -->
-            <img src="INSERT_HERO_IMAGE_URL_HERE" alt="Green Lotto Results Homepage" class="hero-image">
+            <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1767584652/Greenlotto-web_home_i9wmm9.png" alt="Green Lotto Results Homepage" class="hero-image">
             <p class="image-caption">Your new home for instant Green Lotto results</p>
 
             <!-- Story Section -->
@@ -362,27 +368,27 @@
             <!-- What Makes Us Different -->
             <section>
                 <h2>What Makes Us Different?</h2>
-                <img src="INSERT_FEATURES_COLLAGE_URL_HERE" alt="Platform Features Overview" class="feature-image">
+                <img src="" alt="Platform Features Overview" class="feature-image">
                 <p class="image-caption">Fast, mobile-friendly, and packed with features</p>
 
                 <h3>⚡ Real-Time Results</h3>
                 <p>No more waiting hours or refreshing pages endlessly. Our platform delivers draw results in real-time, the moment they become available. Whether you're checking NAIJA VAG's 9 AM draw or CHAMPION's 10 PM draw, you'll get instant access.</p>
-                <img src="INSERT_REALTIME_SCREENSHOT_URL_HERE" alt="Real-time results display" class="feature-image">
+                <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1767555240/greenlotto_mobile-view_opcka7.webp" alt="Real-time results display" class="feature-image">
                 <p class="image-caption">Live results updated instantly</p>
 
                 <h3>📊 Complete Historical Database</h3>
                 <p>Ever wondered about that draw from last month? Or want to analyze patterns? We've got you covered with complete historical data starting from 2026 for all 16 Green Lotto games. Every draw, every result, perfectly organized.</p>
-                <img src="INSERT_HISTORY_TABLE_URL_HERE" alt="Historical results table" class="feature-image">
+                <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1767557074/Naija-vag_historical_draw_isgv2p.png" alt="Historical results table" class="feature-image">
                 <p class="image-caption">Complete draw history at your fingertips</p>
 
                 <h3>🔍 Smart Search Functionality</h3>
                 <p>Finding specific dates is effortless. Our intuitive search lets you jump to any date instantly, whether it's yesterday's results or a draw from weeks ago.</p>
-                <img src="INSERT_SEARCH_FEATURE_URL_HERE" alt="Search by date feature" class="feature-image">
+                <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1767557459/Search_by_date_xfuw0r.png" alt="Search by date feature" class="feature-image">
                 <p class="image-caption">Find any date's results in seconds</p>
 
                 <h3>📱 Mobile-First Design</h3>
                 <p>We know most players check results on their phones. That's why we built our platform mobile-first. It works flawlessly on any device - smartphone, tablet, or desktop.</p>
-                <img src="INSERT_MOBILE_VIEW_URL_HERE" alt="Mobile responsive design" class="feature-image">
+                <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1767557735/greenlotto-home_scjme4.webp" alt="Mobile responsive design" class="feature-image">
                 <p class="image-caption">Perfect experience on any device</p>
 
                 <h3>🚀 Lightning-Fast Performance</h3>
@@ -428,7 +434,7 @@
             <!-- How It Works -->
             <section>
                 <h2>How It Works</h2>
-                <img src="INSERT_HOW_IT_WORKS_IMAGE_URL_HERE" alt="User journey infographic" class="feature-image">
+                <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1767564395/how-it-work_uimihy.png" alt="User journey infographic" class="feature-image">
                 <p class="image-caption">Simple 4-step process to check your results</p>
 
                 <div class="steps-list">
@@ -474,14 +480,14 @@
                 <p>This platform is for you, the Green Lotto community. We'd love to hear your thoughts, suggestions, and feature requests. Your feedback will shape the future of Green Lotto Results.</p>
                 <p><em>Check your winning numbers today at: <a href="https://green-lotto-result.visuallottoboard.com" style="color: #10b981; text-decoration: none; font-weight: 600;">green-lotto-result.visuallottoboard.com</a></em></p>
             </section>
+        </article>
+    </main>
 
-            <!-- Footer Note -->
+     <!-- Footer Note -->
             <footer class="footer-note">
                 <p>© 2025 Visual Lotto Board. All rights reserved.</p>
                 <p style="margin-top: 0.5rem; font-size: 0.85rem;">This is an independent platform. Not affiliated with Green Lotto Company.</p>
             </footer>
-        </article>
-    </div>
 
      <!-- vlb_blog_website -->
     <ins class="adsbygoogle"
