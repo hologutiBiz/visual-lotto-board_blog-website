@@ -89,11 +89,21 @@
             justify-content: space-between;
             align-items: center;
             display: flex;
-    justify-content: space-between;
-    align-items: center;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .logo {
+            border-radius: 50%;
+        }
+
+        .brand-name {
             font-size: 1.5rem;
             font-weight: bold;
             text-decoration: none;
@@ -749,7 +759,10 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="/" class="logo">Visual Lotto Board <span>Insights</span></a>
+            <div class="brand-wrapper">
+                <img class="logo" src="https://res.cloudinary.com/ddatfadov/image/upload/v1749649983/VLB_logo_gpiyzr.png" alt="logo" width="50">
+                <a href="/" class="brand-name">Visual Lotto Board <span>Insights</span></a>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -758,23 +771,23 @@
                             <button class="dropbtn">Explore <span class="arrow">▼</span></button>
                             <div class="dropdown-content">
                                 <a href="/article/forecast-app/overview.html">
-                                    <strong>Forecast App</strong>
-                                    <span>Master the Predictor App</span>
+                                    <strong>Pro Forecast App</strong>
+                                    <span>Deep dives into Pro forecast app features</span>
                                 </a>
                                 <a href="/article/lotto-results/overview.html">
-                                    <strong>Results & History</strong>
-                                    <span>Analysis of live and past draws</span>
+                                    <strong>Lotto Results</strong>
+                                    <span>Baba-Ijebu, GreenLotto and more</span>
                                 </a>
                                 <a href="/article/classification-chart/overview.html">
-                                    <strong>Pattern Analytics</strong>
-                                    <span>Deep dives into our charts</span>
+                                    <strong>Classification chart</strong>
+                                    <span>Deep dives into number relationships</span>
                                 </a>
                                 <!-- <hr class="menu-divider">
                                 <a href="/all-posts/" class="view-all">View All Articles &rarr;</a> -->
                             </div>
                         </div>
                     </li>
-                    <li><a href="#">Announcements</a></li>
+                    <li><a href="/annoucement/index.html">Announcements</a></li>
                 </ul>
             </nav>
             <a href="https://visuallottoboard.com" class="btn-primary">Main Website</a>
@@ -849,6 +862,22 @@
                     </div>
                 </article> -->
             <div class="articles-grid">
+                <!-- Article 3 - Moving Numbers -->
+                <article class="article-card">
+                    <div class="article-image">💡</div>
+                    <div class="article-content">
+                        <span class="article-category">Platform Updates</span>
+                        <h3 class="article-title">
+                            <a href="/annoucement/index.html">Announcements</a>
+                        </h3>
+                        <p class="article-excerpt">Be the first to know about new features, updates, and improvements to Visual Lotto Board. Subscribe to stay informed...</p>
+                        <div class="article-meta">
+                            <time class="article-date" datetime="2026-01-03">📅 January 2026</time>
+                            <a href="/annoucement/index.html" class="read-more">Stay Updated →</a>
+                        </div>
+                    </div>
+                </article>
+
                 <!-- Article 1 - Moving Numbers -->
                 <article class="article-card">
                     <div class="article-image">
@@ -861,13 +890,13 @@
                         </h3>
                         <p class="article-excerpt">Discover how Moving Numbers can transform your forecasting approach by identifying number groups that historically appear together across consecutive draws...</p>
                         <div class="article-meta">
-                            <span class="article-date">📅 November 2024</span>
+                            <time class="article-date" datetime="2025-11-03">📅 November 2025</time>
                             <a href="article/forecast-app/moving-number.html" class="read-more">Read More →</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Article 1 - Registration & Subscription -->
+                <!-- Article 2 - Registration & Subscription -->
                 <article class="article-card">
                     <div class="article-image">📝</div>
                     <div class="article-content">
@@ -877,14 +906,14 @@
                         </h3>
                         <p class="article-excerpt">Everything you need to know about getting started with Visual Lotto Board Pro. Learn about registration, subscription plans, payment methods, and more...</p>
                         <div class="article-meta">
-                            <span class="article-date">📅 December 2024</span>
+                            <time class="article-date" datetime="2025-12-22">📅 December 2025</time>
                             <a href="article/forecast-app/registration-guide.html" class="read-more">Read More →</a>
                         </div>
                     </div>
                 </article>
 
                 <!-- Placeholder for future articles -->
-                <article class="article-card">
+                <!-- <article class="article-card">
                     <div class="article-image">📈</div>
                     <div class="article-content">
                         <span class="article-category">Tips & Strategies</span>
@@ -897,22 +926,7 @@
                             <a href="#" class="read-more">Stay Tuned →</a>
                         </div>
                     </div>
-                </article>
-
-                <article class="article-card">
-                    <div class="article-image">💡</div>
-                    <div class="article-content">
-                        <span class="article-category">Platform Updates</span>
-                        <h3 class="article-title">
-                            <a href="#">Announcements</a>
-                        </h3>
-                        <p class="article-excerpt">Be the first to know about new features, updates, and improvements to Visual Lotto Board. Subscribe to stay informed...</p>
-                        <div class="article-meta">
-                            <span class="article-date">Coming Soon</span>
-                            <a href="#" class="read-more">Stay Tuned →</a>
-                        </div>
-                    </div>
-                </article>
+                </article> -->
             </div>
         </div>
     </section>
@@ -983,7 +997,7 @@
             <div class="footer-section">
                 <h4>Blog Categories</h4>
                 <ul>
-                    <li><a href="/article/forecast-app/overview.html">Forecast App</a></li>
+                    <li><a href="/article/forecast-app/overview.html">Pro Forecast App</a></li>
                     <li><a href="/article/classification-chart/overview.html">Classification Chart</a></li>
                     <li><a href="/article/lotto-results/overview.html">Lotto Results</a></li>
                     <!-- <li><a href="#categories">Tips & Strategies</a></li> -->
