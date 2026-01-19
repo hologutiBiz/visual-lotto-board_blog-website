@@ -16,20 +16,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Visual Lotto Board Insights</title>
-    <meta name="description" content="Lotto insights, Announcements & forecasting tips.">
+    <meta name="description" content="Lotto insights, updates & forecasting tips.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <meta property="og:url" content="https://blog.visuallottoboard.com/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Blog | Visual Lotto Board Insights">
-    <meta property="og:description" content="Lotto insights, Announcements & forecasting tips.">
+    <meta property="og:description" content="Lotto insights, updates & forecasting tips.">
     <meta property="og:image" content="https://res.cloudinary.com/ddatfadov/image/upload/v1767186280/VLB-blog-banner_qscoof.png">
 
     <!-- twitter-->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@insights_HBC">
+    <meta name="twitter:site" content="@visualottoboard">
     <meta name="twitter:title" content="Blog | Visual Lotto Board Insights">
-    <meta name="twitter:description" content="Lotto insights, Announcements & forecasting tips.">
+    <meta name="twitter:description" content="Lotto insights, updates & forecasting tips.">
     <meta name="twitter:image" content="https://res.cloudinary.com/ddatfadov/image/upload/v1767186280/VLB-blog-banner_qscoof.png">
     <meta name="twitter:url" content="https://blog.visuallottoboard.com/">
 
@@ -38,716 +38,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="test.css">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-blue: #2282c7;
-            --dark-blue: #1a5fa0;
-            --secondary-green: #059669;
-            --accent-gold: #f59e0b;
-            --bg-light-gray: #e8eaed;
-            --bg-lighter: #f9fafb;
-            --border-gray: #d0d0d0;
-            --bg-card: #f0f2f5;
-            --dark-bg: #1f2937;
-            --text-dark: #111827;
-            --text-light: #6b7280;
-            --white: #ffffff;
-            /* --accent: #10b981; Emerald Green */
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-lighter);
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            color: var(--white);
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo {
-            border-radius: 50%;
-        }
-
-        .brand-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: var(--white);
-        }
-
-        .logo span {
-            color: var(--accent-gold);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-            animation: slideDown 0.3s ease-out;
-        }
-
-        .dropdown:hover .dropbtn {
-            color: var(--text-main);
-        }
-        .dropbtn {
-            background: none;
-            border: none;
-            color: var(--text-dim);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 400;
-            cursor: pointer;
-            padding: 10px 15px;
-            transition: var(--transition);
-        }
-
-        .dropbtn .arrow {
-            font-size: 0.7rem;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            min-width: 260px;
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            z-index: 1000;
-            top: 100%;
-            left: 0;
-            padding: 10px;
-            overflow: hidden;
-        }
-
-        .dropdown-content a {
-            color: #2282c7;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        .dropdown-content a strong {
-            display: block;
-            font-size: 0.95rem;
-            color: var(--accent); /* Emerald color from earlier */
-        }
-
-        .dropdown-content a span {
-            display: block;
-            font-size: 0.75rem;
-            color: var(--text-dim);
-        }
-
-        .dropdown-content:hover {
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: rgba(16, 185, 129, 0.1);
-        }
-
-        /* Smooth Animation */
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: var(--accent-gold);
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            background-color: #f5f5dc;
-            color: #000;
-            padding: 8px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
-            color: var(--white);
-            padding: 5rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            margin-bottom: 2rem;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--accent-gold);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        /* Categories Section */
-        .categories {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--text-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-        }
-
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .category-card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .category-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(34, 130, 199, 0.15);
-            border-color: var(--primary-blue);
-        }
-
-        .category-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .category-card h3 {
-            color: var(--primary-blue);
-            margin-bottom: 0.75rem;
-            font-size: 1.4rem;
-        }
-
-        .category-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .category-count {
-            display: inline-block;
-            background: var(--bg-card);
-            color: var(--primary-blue);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 1rem;
-        }
-
-        /* Featured Articles */
-        .featured-section {
-            background: var(--white);
-            padding: 4rem 2rem;
-        }
-
-        .featured-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .article-card {
-            background: var(--bg-lighter);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-gray);
-        }
-
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(34, 130, 199, 0.15);
-        }
-
-        .article-image {
-            width: 100%;
-
-            height: 220px; 
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white); 
-            font-size: 4rem;
-            position: relative;
-            overflow: hidden; 
-        }
-/* 
-        .article-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 60%);
-        } */
-
-        .article-content {
-            padding: 2rem;
-            background: var(--white);
-        }
-
-        .article-category {
-            display: inline-block;
-            background: var(--accent-gold);
-            color: var(--white);
-            padding: 0.4rem 1rem;
-            border-radius: 25px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .article-title {
-            font-size: 1.4rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-dark);
-            line-height: 1.4;
-        }
-
-        .article-title a {
-            color: var(--text-dark);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .article-title a:hover {
-            color: var(--primary-blue);
-        }
-
-        .article-excerpt {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .article-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            border-top: 1px solid var(--bg-light-gray);
-        }
-
-        .article-date {
-            color: var(--text-light);
-            font-size: 0.85rem;
-        }
-
-        .read-more {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .read-more:hover {
-            color: var(--dark-blue);
-            gap: 0.75rem;
-        }
-
-        /* Newsletter Section */
-        .newsletter {
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            color: var(--white);
-            padding: 4rem 2rem;
-            margin: 4rem 0;
-        }
-
-        .newsletter-container {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .newsletter h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .newsletter p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            margin-bottom: 2rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 1rem 1.5rem;
-            border: none;
-            border-radius: 30px;
-            font-size: 1rem;
-            outline: none;
-        }
-
-        .newsletter-form button {
-            padding: 1rem 2rem;
-            background: var(--accent-gold);
-            color: var(--white);
-            border: none;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            white-space: nowrap;
-        }
-
-        .newsletter-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        /* About Section */
-        .about-section {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        .about-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .feature-item {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-gray);
-            transition: all 0.3s;
-        }
-
-        .feature-item:hover {
-            border-color: var(--primary-blue);
-            box-shadow: 0 4px 12px rgba(34, 130, 199, 0.1);
-        }
-
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .feature-item h4 {
-            color: var(--primary-blue);
-            margin-bottom: 0.5rem;
-        }
-
-        .feature-item p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin: 0;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-bg);
-            color: var(--white);
-            padding: 3rem 2rem 1.5rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h4 {
-            margin-bottom: 1.5rem;
-            color: var(--primary-blue);
-            font-size: 1.2rem;
-        }
-
-        .footer-section p {
-            opacity: 0.8;
-            line-height: 1.8;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
-            color: var(--white);
-            text-decoration: none;
-            opacity: 0.8;
-            transition: all 0.3s;
-            display: block;
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-section a:hover {
-            opacity: 1;
-            color: var(--primary-blue);
-            padding-left: 0.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            color: #fff;
-            background: var(--primary-blue);
-            transform: translateY(-3px);
-            padding-left: 0;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
-       
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .about-features {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .newsletter h2 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+   
 </head>
 <body>
 
@@ -765,216 +57,167 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li>
-                        <div class="dropdown">
-                            <button class="dropbtn">Explore <span class="arrow">▼</span></button>
-                            <div class="dropdown-content">
-                                <a href="/article/forecast-app/overview.html">
-                                    <strong>Pro Forecast App</strong>
-                                    <span>Deep dives into Pro forecast app features</span>
-                                </a>
-                                <a href="/article/lotto-results/overview.html">
-                                    <strong>Lotto Results</strong>
-                                    <span>Baba-Ijebu, GreenLotto and more</span>
-                                </a>
-                                <a href="/article/classification-chart/overview.html">
-                                    <strong>Classification chart</strong>
-                                    <span>Deep dives into number relationships</span>
-                                </a>
-                                <!-- <hr class="menu-divider">
-                                <a href="/all-posts/" class="view-all">View All Articles &rarr;</a> -->
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="/annoucement/index.html">Announcements</a></li>
+                    <li><a href="/article/forecast-app/overview.html">Forecast App</a></li>
+                    <li><a href="/article/lotto-results/overview.html">Lotto Results</a></li>
+                    <li><a href="/article/classification-chart/overview.html">Classification Charts</a></li>
+                    <li><a href="/updates/index.html">Updates</a></li>
                 </ul>
             </nav>
-            <a href="https://visuallottoboard.com" class="btn-primary">Main Website</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-slider">
+            <!-- Slide 1: Lotto Forecast App -->
+            <div class="hero-slide hero-slide-1"></div>
+            
+            <!-- Slide 2:  Lotto Results -->
+            <div class="hero-slide hero-slide-2"></div>
+            
+            <!-- Slide 3: Classification Chart-->
+            <div class="hero-slide hero-slide-3"></div>
+        </div>
         <div class="hero-content">
             <h1>Seeing Beyond the Numbers</h1>
             <p>Data-driven insights, pattern analysis, and the latest updates from the Visual Lotto Board community.</p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number">3+</span>
-                    <span class="stat-label">Articles</span>
-                </div>
-                <!-- <div class="stat-item">
-                    <span class="stat-number">3</span>
-                    <span class="stat-label">Main Categories</span>
-                </div> -->
-                <!-- <div class="stat-item">
-                    <span class="stat-number">Pro</span>
-                    <span class="stat-label">Premium Features</span>
-                </div> -->
-            </div>
         </div>
     </section>
 
     <main>
-    <!-- Categories Section -->
-    <!-- <section class="categories" id="categories">
-        <div class="section-header">
-            <h2 class="section-title">Explore by Category</h2>
-            <p class="section-subtitle">Find articles and guides tailored to your interests</p>
-        </div>
-        <div class="category-grid">
-            <div class="category-card">
-                <span class="category-icon">🎯</span>
-                <h3>Lotto Forecast App (Pro)</h3>
-                <p>Unlock advanced forecasting tools, learn pro features, and master prediction strategies for serious players</p>
-                <span class="category-count">1 Article</span>
-            </div>
-            <div class="category-card">
-                <span class="category-icon">📊</span>
-                <h3>Lotto Classification Chart</h3>
-                <p>Understand number relationships, counterparts, and classification patterns to improve your analysis</p>
-                <span class="category-count">Coming Soon</span>
-            </div>
-            <div class="category-card">
-                <span class="category-icon">🎲</span>
-                <h3>Baba Ijebu Lotto Results</h3>
-                <p>Stay updated with result patterns, draw analysis, and historical data insights for Baba Ijebu games</p>
-                <span class="category-count">Coming Soon</span>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Featured Articles -->
-    <section class="featured-section" id="featured">
-        <div class="featured-container">
-            <div class="section-header">
-                <h2 class="section-title">Latest Articles & Guides</h2>
-                <p class="section-subtitle">Stay ahead with our expert insights and tutorials</p>
-            </div>
-            <!-- <article class="blog-card">
-                    <div class="card-image" style="background-image: url('https://res.cloudinary.com/ddatfadov/image/upload/v1764840337/moving-number_interface-with_5_selected_kwxe2m.png');"></div>
-                    <div class="card-content">
-                        <span class="tag tag-guide">Tutorial</span>
-                        <h3>5 Hidden Features You Need to Try Today</h3>
-                        <p>Discover the power of custom pattern overlays and automated alerts...</p>
-                        <div class="card-meta">Dec 24 • 4 min read</div>
-                    </div>
-                </article> -->
-            <div class="articles-grid">
-                <!-- Article 3 - Moving Numbers -->
-                <article class="article-card">
-                    <div class="article-image">💡</div>
-                    <div class="article-content">
-                        <span class="article-category">Platform Updates</span>
-                        <h3 class="article-title">
-                            <a href="/annoucement/index.html">Announcements</a>
-                        </h3>
-                        <p class="article-excerpt">Be the first to know about new features, updates, and improvements to Visual Lotto Board. Subscribe to stay informed...</p>
-                        <div class="article-meta">
-                            <time class="article-date" datetime="2026-01-03">📅 January 2026</time>
-                            <a href="/annoucement/index.html" class="read-more">Stay Updated →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 1 - Moving Numbers -->
-                <article class="article-card">
-                    <div class="article-image">
-                        <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1764840337/moving-number_interface-with_5_selected_kwxe2m.png" alt="">
-                    </div>
-                    <div class="article-content">
-                        <span class="article-category">Lotto Forecast App (Pro)</span>
-                        <h3 class="article-title">
-                            <a href="article/forecast-app/moving-number.html">Unlock Smarter Predictions with Moving Numbers</a>
-                        </h3>
-                        <p class="article-excerpt">Discover how Moving Numbers can transform your forecasting approach by identifying number groups that historically appear together across consecutive draws...</p>
-                        <div class="article-meta">
-                            <time class="article-date" datetime="2025-11-03">📅 November 2025</time>
-                            <a href="article/forecast-app/moving-number.html" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Article 2 - Registration & Subscription -->
-                <article class="article-card">
-                    <div class="article-image">📝</div>
-                    <div class="article-content">
-                        <span class="article-category">Lotto Forecast App (Pro)</span>
-                        <h3 class="article-title">
-                            <a href="/article/forecast-app/registration-guide.html">Complete Guide to Registration & Subscription</a>
-                        </h3>
-                        <p class="article-excerpt">Everything you need to know about getting started with Visual Lotto Board Pro. Learn about registration, subscription plans, payment methods, and more...</p>
-                        <div class="article-meta">
-                            <time class="article-date" datetime="2025-12-22">📅 December 2025</time>
-                            <a href="article/forecast-app/registration-guide.html" class="read-more">Read More →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Placeholder for future articles -->
-                <!-- <article class="article-card">
-                    <div class="article-image">📈</div>
-                    <div class="article-content">
-                        <span class="article-category">Tips & Strategies</span>
-                        <h3 class="article-title">
-                            <a href="#">More Articles Coming Soon</a>
-                        </h3>
-                        <p class="article-excerpt">We're constantly creating new content to help you improve your lotto forecasting skills. Check back soon for more expert guides and tutorials...</p>
-                        <div class="article-meta">
-                            <span class="article-date">Coming Soon</span>
-                            <a href="#" class="read-more">Stay Tuned →</a>
-                        </div>
-                    </div>
-                </article> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="newsletter-container">
-            <h2>Never Miss an Update</h2>
-            <p>Get the latest forecasting tips, feature guides, and expert insights delivered straight to your inbox</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter subscription coming soon!');">
-                <input type="email" placeholder="Enter your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Why Visual Lotto Board Insights?</h2>
-                <p>Visual Lotto Board Insights is your trusted companion for mastering lotto forecasting. We provide in-depth guides, tutorials, and expert tips to help you make the most of Visual Lotto Board's powerful tools.</p>
-                <p>Whether you're a beginner learning the basics or a pro user exploring advanced features, our articles are designed to enhance your forecasting skills and increase your confidence.</p>
-            </div>
-            <div class="about-features">
-                <div class="feature-item">
-                    <span class="feature-icon">📚</span>
-                    <h4>Expert Guides</h4>
-                    <p>Comprehensive tutorials written by experienced forecasters</p>
+    
+        <!-- Featured Articles -->
+        <section class="featured-section" id="featured">
+            <div class="featured-container">
+                <div class="section-header">
+                    <h2 class="section-title">Latest Articles & Guides</h2>
+                    <p class="section-subtitle">Stay ahead with our insights and updates</p>
                 </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🎯</span>
-                    <h4>Pro Features</h4>
-                    <p>Learn to use advanced tools like Moving Numbers</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">📊</span>
-                    <h4>Data-Driven</h4>
-                    <p>Strategies based on historical patterns and analysis</p>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🚀</span>
-                    <h4>Always Updated</h4>
-                    <p>New articles and guides published regularly</p>
+                <!-- <article class="blog-card">
+                        <div class="card-image" style="background-image: url('https://res.cloudinary.com/ddatfadov/image/upload/v1764840337/moving-number_interface-with_5_selected_kwxe2m.png');"></div>
+                        <div class="card-content">
+                            <span class="tag tag-guide">Tutorial</span>
+                            <h3>5 Hidden Features You Need to Try Today</h3>
+                            <p>Discover the power of custom pattern overlays and automated alerts...</p>
+                            <div class="card-meta">Dec 24 • 4 min read</div>
+                        </div>
+                    </article> -->
+                <div class="articles-grid">
+                    <!-- Article 3 - Moving Numbers -->
+                    <article class="article-card">
+                        <div class="article-image">📢</div>
+                        <div class="article-content">
+                            <span class="article-category">Updates</span>
+                            <h3 class="article-title">
+                                <a href="/updates/index.html">Announcements</a>
+                            </h3>
+                            <p class="article-excerpt">Be the first to know about new features, updates, and improvements to Visual Lotto Board. Subscribe to stay informed...</p>
+                            <div class="article-meta">
+                                <time class="article-date" datetime="2026-01-03">📅 January 2026</time>
+                                <a href="/updates/index.html" class="read-more">Stay Updated →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 1 - Moving Numbers -->
+                    <article class="article-card article_moving-number">
+                        <div class="article-image">
+                            <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1764840337/moving-number_interface-with_5_selected_kwxe2m.png" alt="">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Lotto Forecast App (Pro)</span>
+                            <h3 class="article-title">
+                                <a href="article/forecast-app/moving-number.html">Unlock Smarter Predictions with Moving Numbers</a>
+                            </h3>
+                            <p class="article-excerpt">Discover how Moving Numbers can transform your forecasting approach by identifying number groups that historically appear together across consecutive draws...</p>
+                            <div class="article-meta">
+                                <time class="article-date" datetime="2025-11-03">📅 November 2025</time>
+                                <a href="article/forecast-app/moving-number.html" class="read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 - Registration & Subscription -->
+                    <article class="article-card">
+                        <div class="article-image">
+                            <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1766520748/LFA_sign-up-page_stwu7i.png" alt="sign up page">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Lotto Forecast App (Pro)</span>
+                            <h3 class="article-title">
+                                <a href="/article/forecast-app/registration-guide.html">Complete Guide to Registration & Subscription</a>
+                            </h3>
+                            <p class="article-excerpt">Everything you need to know about getting started with Visual Lotto Board Pro. Learn about registration, subscription plans, payment methods, and more...</p>
+                            <div class="article-meta">
+                                <time class="article-date" datetime="2025-12-22">📅 December 2025</time>
+                                <a href="article/forecast-app/registration-guide.html" class="read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Placeholder for future articles -->
+                    <!-- <article class="article-card">
+                        <div class="article-image">📈</div>
+                        <div class="article-content">
+                            <span class="article-category">Tips & Strategies</span>
+                            <h3 class="article-title">
+                                <a href="#">More Articles Coming Soon</a>
+                            </h3>
+                            <p class="article-excerpt">We're constantly creating new content to help you improve your lotto forecasting skills. Check back soon for more expert guides and tutorials...</p>
+                            <div class="article-meta">
+                                <span class="article-date">Coming Soon</span>
+                                <a href="#" class="read-more">Stay Tuned →</a>
+                            </div>
+                        </div>
+                    </article> -->
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="newsletter-container">
+                <h2>Never Miss an Update</h2>
+                <p>Get the latest forecasting tips, feature guides, and expert insights delivered straight to your inbox</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter subscription coming soon!');">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Visual Lotto Board Insights?</h2>
+                    <p>Visual Lotto Board Insights is your trusted companion for mastering lotto forecasting. We provide in-depth guides, and tips to help you make the most of Visual Lotto Board's platform</p>
+                    <p>Whether you're a beginner learning the basics or a pro user exploring advanced features, our articles are designed to enhance your forecasting skills and increase your confidence.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">📚</span>
+                        <h4>Guides</h4>
+                        <p>Comprehensive tutorials written by experienced forecasters</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon pro-icon"></span>
+                        <h4>Pro Features</h4>
+                        <p>Learn to use advanced features like Moving Numbers</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📊</span>
+                        <h4>Data-Driven</h4>
+                        <p>Strategies based on historical patterns and analysis</p>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🚀</span>
+                        <h4>Always Updated</h4>
+                        <p>New articles and guides published regularly</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -1023,7 +266,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Visual Lotto Board. All rights reserved. | <a href="https://visuallottoboard.com/policies-center.html" target="_blank" style="color: inherit;">Privacy Policy</a> | <a href="https://visuallottoboard.com/terms-&-condtions/platform" target="_blank" style="color: inherit;">Terms of Service</a></p>
+            <p>&copy; 2025 Visual Lotto Board. All rights reserved. | <a href="https://visuallottoboard.com/policies-center.html" target="_blank" style="color: inherit;">Privacy Policy</a> | <a href="https://visuallottoboard.com/terms-&-condtions/platform" target="_blank" style="color: inherit;">Terms of Service</a></p>
         </div>
     </footer>
 
