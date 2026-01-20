@@ -179,10 +179,25 @@
             <div class="newsletter-container">
                 <h2>Never Miss an Update</h2>
                 <p>Get the latest forecasting tips, feature guides, and expert insights delivered straight to your inbox</p>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter subscription coming soon!');">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit">Subscribe</button>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input 
+                        type="email" 
+                        id="emailInput"
+                        placeholder="Enter your email address" 
+                        required
+                        autocomplete="email"
+                    >
+                    <button type="submit" id="submitBtn">
+                        <span id="btnText">Subscribe</span>
+                    </button>
                 </form>
+
+                <div id="messageBox"></div>
+
+                <p class="privacy-notice">
+                    We respect your privacy. Unsubscribe at any time. 
+                    <a href="#">Privacy Policy</a>
+                </p>
             </div>
         </section>
 
@@ -281,5 +296,9 @@
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
+
+    <!-- Supabase SDK-->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
+    <script type="module" src="script.js"></script>
 </body>
 </html>
