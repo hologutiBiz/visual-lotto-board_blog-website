@@ -297,8 +297,11 @@
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 
-    <!-- Supabase SDK-->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
-    <script type="module" src="script.js"></script>
+   
+    <!-- Load Supabase SDK first -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Load your script (NO type="module") -->
+     <script src="newsletter.js"></script>
 </body>
 </html>

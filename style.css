@@ -17,6 +17,8 @@
     --text-dark: #111827;
     --text-light: #6b7280;
     --white: #ffffff;
+    --success-green: #10b981;
+    --error-red: #ef4444;
 }
 
 body {
@@ -315,64 +317,138 @@ nav a:hover {
     gap: 0.75rem;
 }
 
-        /* Newsletter Section */
-        .newsletter {
-            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
-            color: var(--white);
-            padding: 4rem 2rem;
-            margin: 4rem 0;
-        }
+/* Newsletter Section */
+.newsletter {
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    color: var(--white);
+    padding: 4rem 2rem;
+    margin: 4rem 0;
+}
 
-        .newsletter-container {
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
+.newsletter-container {
+    /* max-width: 700px;
+    margin: 0 auto; */
+    text-align: center;
+}
 
-        .newsletter h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
+.newsletter h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
 
-        .newsletter p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-            margin-bottom: 2rem;
-        }
+.newsletter p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
 
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
+.newsletter-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
 
-        .newsletter-form input {
-            flex: 1;
-            padding: 1rem 1.5rem;
-            border: none;
-            border-radius: 30px;
-            font-size: 1rem;
-            outline: none;
-        }
+.newsletter-form input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
 
-        .newsletter-form button {
-            padding: 1rem 2rem;
-            background: var(--accent-gold);
-            color: var(--white);
-            border: none;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            white-space: nowrap;
-        }
+.newsletter-form input:focus {
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
+}
 
-        .newsletter-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
+.newsletter-form button {
+    padding: 1rem 2rem;
+    background: var(--accent-gold);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    white-space: nowrap;
+}
 
+.newsletter-form button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.newsletter-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Loading Spinner */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Message Display */
+.message {
+    display: none;
+    margin-top: 1rem 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message.show {
+    display: block;
+}
+
+.message.success {
+    color: #fff;
+    background-color: var(--success-green);
+}
+
+.message.error {
+    color: #fff;
+    background: var(--error-red);
+}
+
+/* Privacy Notice*/
+.privacy-notice {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+.privacy-notice a {
+    color: var(--accent-gold);
+    text-decoration: none;
+}
+.privacy-notice a:hover {
+    text-decoration: underline;
+}
         /* About Section */
         .about-section {
             max-width: 1200px;
@@ -584,4 +660,18 @@ footer {
                 font-size: 1.8rem;
             }
         }
+
+@media (max-width: 600px) {
+    .newsletter h2 {
+        font-size: 1.8rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-form button {
+        width: 100%;
+    }
+}
 
