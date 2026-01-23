@@ -2,9 +2,12 @@ const SUPABASE_URL = "https://cawtboppqqhmyffivvvz.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNhd3Rib3BwcXFobXlmZml2dnZ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkwOTkyMTQsImV4cCI6MjA4NDY3NTIxNH0.UqEv9q_X8lIrkG9bpSywBQ6FgdD1R5ZgAV4_ohO_usE"; // Replace with your actual anon key
 
 // Initialize Supabase
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const SUPABASE = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-console.log('✅ Supabase initialized');
+// console.log('✅ Supabase initialized');
+// console.log('🔍 URL:', SUPABASE_URL);
+// console.log('🔑 Key starts with:', SUPABASE_ANON_KEY.substring(0, 30) + '...');
+// console.log('🔑 Key length:', SUPABASE_ANON_KEY.length, 'characters');
 
 // DOM Elements
 const form = document.getElementById("newsletterForm");
@@ -46,7 +49,7 @@ async function subscribeNewsletter(email) {
 
         const normalizedEmail = email.toLowerCase().trim();
 
-        const { data: existing, error: checkError } = await supabase
+        const { data: existing, error: checkError } = await SUPABASE
             .from('newsletter_subscribers')
             .select('email, status')
             .eq('email', normalizedEmail)
@@ -58,7 +61,7 @@ async function subscribeNewsletter(email) {
 
         if (existing) {
             if (existing.status === 'unsubscribed') {
-                const { error: updateError } = await supabase
+                const { error: updateError } = await SUPABASE
                     .from('newsletter_subscribers')
                     .update({ status: 'active' })
                     .eq('email', normalizedEmail);
@@ -69,7 +72,7 @@ async function subscribeNewsletter(email) {
             return { success: false, message: '✓ This email is already subscribed!' };
         }
 
-        const { data, error } = await supabase
+        const { data, error } = await SUPABASE
             .from('newsletter_subscribers')
             .insert([{
                 email: normalizedEmail,
@@ -77,7 +80,7 @@ async function subscribeNewsletter(email) {
                 source: window.location.pathname,
                 user_agent: navigator.userAgent
             }])
-            .select();
+            // .select();
 
         if (error) {
             if (error.code === '23505') {
@@ -112,4 +115,4 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
-console.log('📧 Newsletter form ready');
+// console.log('📧 Newsletter form ready');
