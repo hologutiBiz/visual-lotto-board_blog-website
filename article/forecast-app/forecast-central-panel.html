@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing Forecast Central Panel: Your All-in-One Forecasting Dashboard | Visual Lotto Board</title>
+    <meta name="description" content="Discover the Forecast Central Panel - a powerful Pro feature that combines classification charts, game results, and live updates in one seamless dashboard.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2282c7;
+            --dark-blue: #1a5fa0;
+            --secondary-green: #059669;
+            --accent-gold: #f59e0b;
+            --bg-light-gray: #e8eaed;
+            --bg-lighter: #f9fafb;
+            --border-gray: #d0d0d0;
+            --bg-card: #f0f2f5;
+            --dark-bg: #1f2937;
+            --text-dark: #111827;
+            --text-light: #6b7280;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background-color: var(--bg-lighter);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .article-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .article-category-badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .article-content {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid var(--bg-light-gray);
+        }
+
+        .article-content h2 {
+            color: var(--primary-blue);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+
+        .article-content h3 {
+            color: var(--text-dark);
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.35rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .article-content ul, .article-content ol {
+            margin: 1.25rem 0 1.25rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .article-image {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-gray);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-light-gray));
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--text-light);
+            border: 2px dashed var(--border-gray);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .video-container {
+            margin: 2.5rem 0;
+            padding: 2rem;
+            background: var(--bg-lighter);
+            border-radius: 12px;
+            border: 2px solid var(--primary-blue);
+        }
+
+        .video-container h3 {
+            color: var(--primary-blue);
+            margin: 0 0 1.5rem 0;
+            text-align: center;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: var(--dark-bg);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-placeholder {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .highlight-box {
+            background: #e6f3fb;
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background: #ecfdf5;
+            border-left: 4px solid var(--secondary-green);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .tip-box {
+            background: #fef3c7;
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-gray);
+        }
+
+        .feature-card h4 {
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: var(--dark-bg);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                /* flex-direction: column; */
+                gap: 1rem;
+                text-align: center;
+            }
+            
+
+            .article-header h1 {
+                font-size: 2rem;
+            }
+
+            .article-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="../../index.html" class="logo">Visual Lotto Board <span>Insights</span></a>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Home</a></li>
+                    <li><a href="./overview.html">Related Articles</a></li>
+                    <li><a href="https://app.visuallottoboard.com">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="article-header">
+        <div class="article-header-content">
+            <div class="breadcrumb">
+                <a href="../../index.html">Blog</a> / <a href="../lotto-forecast-app/main.html">Lotto Forecast (Pro)</a>
+            </div>
+            <span class="article-category-badge">Lotto Forecast (Pro)</span>
+            <h1>Introducing Forecast Central Panel: Your All-in-One Forecasting Dashboard</h1>
+            <div class="article-meta">
+                <time datetime="2026-01-30">📅 January 2026</time>
+                <span>⏱️ 8 min read</span>
+                <span>👤 Visual Lotto Board Team</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="article-container">
+        <article class="article-content">
+            <p>We're excited to introduce the <strong>Forecast Central Panel</strong> – a game-changing feature that brings everything you need for lotto forecasting into one powerful, unified dashboard. No more switching between tabs, no more losing focus, just seamless forecasting efficiency.</p>
+
+            <div class="article-image">
+                <div class="image-placeholder">
+                    <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1769469296/Forecast-central-panel_dashboard_wytvnb.png" alt="Forecast Central Panel dashboard">
+                </div>
+                <p class="image-caption">The Forecast Central Panel - All your forecasting tools in one place</p>
+            </div>
+
+            <h2>The Problem We Solved</h2>
+            <p>As a serious lotto forecaster, you know the routine: you're analyzing patterns in the classification chart, then switching to check game results, then jumping to see the latest draws, then back to the classification chart to verify a number relationship. This constant tab-switching breaks your concentration and slows down your analysis.</p>
+
+            <p>We heard you loud and clear. That's why we built the Forecast Central Panel.</p>
+
+            <h2>What is Forecast Central Panel?</h2>
+            <p>The Forecast Central Panel is an exclusive Pro feature that combines three essential forecasting tools into a single, integrated dashboard:</p>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>📊 Lotto Classification Chart</h4>
+                    <p>View counterparts, bonanza, malta, key numbers, and all classification data on the left side</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎰 Game Results (25 Games)</h4>
+                    <p>Access complete historical data for all Baba Ijebu games from 2023 to present</p>
+                </div>
+                <div class="feature-card">
+                    <h4>⏱️ Latest Results (Live)</h4>
+                    <p>Get real-time updates for today's active games with automatic focus switching</p>
+                </div>
+            </div>
+
+            <p>Everything is visible at once, eliminating the need to navigate between pages while you're building your forecast.</p>
+
+            <!-- <div class="article-image">
+                <div class="image-placeholder">
+                    📸 INSERT IMAGE HERE: Three-section layout overview with labels
+                </div>
+                <p class="image-caption">Three-section layout: Classification (left), Game Results (center), Latest Results (right)</p>
+            </div> -->
+
+            <h2>How to Access Forecast Central Panel</h2>
+            <p>The Forecast Central Panel is available exclusively to Visual Lotto Board Pro subscribers. Here's how to access it:</p>
+
+            <ol>
+                <li><strong>Log in</strong> to your Pro account at <a href="https://app.visuallottoboard.com" style="color: var(--primary-blue);">app.visuallottoboard.com</a></li>
+                <li><strong>Navigate to your main dashboard</strong></li>
+                <li><strong>Click "Forecast Central Panel"</strong> from the header navigation</li>
+                <li><strong>Start forecasting!</strong> All tools are ready to use</li>
+            </ol>
+
+            <div class="success-box">
+                <p><strong>✅ Pro Tip:</strong> Bookmark the Forecast Central Panel for quick access. It's designed to be your primary workspace for serious forecasting sessions.</p>
+            </div>
+
+            <h2>Section 1: Lotto Classification Chart (Left Side)</h2>
+            <p>The left section of your Forecast Central Panel displays the complete lotto classification chart with all number relationships and patterns.</p>
+
+            <h3>What You Can See:</h3>
+            <ul>
+                <li><strong>Number:</strong> The numbers</li>
+                <li><strong>Counterpart:</strong> Number pairs that move together</li>
+                <li><strong>Bonanza:</strong> Special number groupings</li>
+                <li><strong>Malta:</strong> Malta number relationships</li>
+                <li><strong>Key Numbers:</strong> Critical numbers for forecasting</li>
+                <li><strong>Shadow:</strong> Numbers that follow patterns</li>
+                <li><strong>Partner:</strong> Number pairs that move together</li>
+                <li><strong>Equivalent:</strong> Number equivalence mappings</li>
+                <li><strong>Code:</strong> Classification codes and meanings</li>
+            </ul>
+
+            <h3>Interactive Features:</h3>
+            <p>The classification chart isn't just static data – it's designed for easy navigation and analysis:</p>
+
+            <ul>
+                <li><strong>Scrollable View:</strong> Smoothly scroll through all classification data without leaving the panel</li>
+                <li><strong>Row Hover Effect:</strong> When you hover over any number row, the entire row highlights with a background color change, making it easy to follow relationships across columns</li>
+                <li><strong>Always Visible:</strong> Keep the classification chart in view while checking results and patterns in the other sections</li>
+            </ul>
+
+            <div class="article-image">
+                <div class="image-placeholder">
+                    <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1769470137/fcp-counterpart-with-hover-effect_uhwwwq.png" alt="Counterpart with hover effect">
+                </div>
+                <p class="image-caption">Classification chart with row hover effect for easy number tracking</p>
+            </div>
+
+            <h2>Section 2: Game Results - Complete Historical Data (Center)</h2>
+            <p>The center section is where power forecasters spend most of their time. It displays comprehensive historical results for all 25 Baba Ijebu games.</p>
+
+            <h3>What's Included:</h3>
+            <ul>
+                <li><strong>All 25 Baba Ijebu Games:</strong> Every game from NAP 2 to International</li>
+                <li><strong>Complete History:</strong> All draws from 2023 to the present date</li>
+                <li><strong>Scrollable Interface:</strong> Scroll both vertically (through draws) and horizontally (through games)</li>
+                <li><strong>Top-Down Display:</strong> By default, shows the earliest draws (2023) at the top</li>
+            </ul>
+
+            <h3>Powerful Search Functionality:</h3>
+            <p>The Game Results section includes an advanced search feature that sets it apart:</p>
+
+            <div class="highlight-box">
+                <p><strong>🔍 Search Numbers in Specific Positions</strong></p>
+                <p>Looking for a specific number pattern? Use the search field to find numbers in specific positions across all draws. When your search matches:</p>
+                <ul style="margin-top: 1rem;">
+                    <li>✅ The entire row is highlighted</li>
+                    <li>✅ The matching number(s) are emphasized</li>
+                    <li>✅ You can instantly see the context and surrounding numbers</li>
+                </ul>
+            </div>
+
+            <p>This search capability is invaluable when you're tracking number patterns, analyzing frequency, or validating your forecasting theories based on historical data.</p>
+
+            <div class="article-image">
+                <div class="image-placeholder">
+                    <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1769470706/fcp-Game-Results-with-search-functionality_ok1spn.png" alt="Game Results section with searched numbers gighligted">
+                </div>
+                <p class="image-caption">Game Results section showing search field and highlighted matching results</p>
+            </div>
+
+            <h2>Section 3: Latest Results - Real-Time Updates (Right Side)</h2>
+            <p>The right section keeps you connected to what's happening right now. It displays the most recent results for games currently playing or recently completed.</p>
+
+            <h3>Smart Daily Game Buttons:</h3>
+            <p>At the top of the Latest Results section, you'll see 6 dynamic buttons that automatically display the games for today:</p>
+
+            <ul>
+                <li><strong>Sunday Games:</strong> Royal, Mark-II, Enugu, Lucky, Aseda, Tota</li>
+                <li><strong>Monday Games:</strong> Diamond, Peoples, Bingo, Metro, Monday Special, International</li>
+                <li><strong>Tuesday Games:</strong> [And so on for each day]</li>
+            </ul>
+
+            <p>Each button shows both the <strong>game name</strong> and its <strong>closing time</strong>, so you always know when the next draw is happening.</p>
+
+            <h3>Automatic Focus Switching:</h3>
+            <p>Here's where the magic happens – the Latest Results section is intelligent:</p>
+
+            <div class="success-box">
+                <p><strong>⚡ Auto-Active Game Selection</strong></p>
+                <p>When a game is currently playing (before its closing time), its button automatically becomes active and displays the latest results for that game. The results view focuses on the most recent draw at the bottom of the table.</p>
+                <p style="margin-top: 1rem;">When one game closes, the next game to play automatically receives focus, updating the display without you lifting a finger!</p>
+            </div>
+
+            <h3>Manual Control:</h3>
+            <p>While the system automatically tracks active games, you're always in control:</p>
+
+            <ul>
+                <li><strong>Click any game button</strong> to manually view its results</li>
+                <li><strong>Switch between games</strong> instantly to compare patterns</li>
+                <li><strong>Scroll through draws</strong> – results include complete history from 2023</li>
+            </ul>
+
+            <h3>Bottom-Up Display:</h3>
+            <p>Unlike the Game Results section (which shows oldest first), Latest Results are displayed <strong>bottom-up</strong>, meaning the most recent draws appear at the bottom of the table. The table automatically focuses on the latest draw, keeping you current with real-time results.</p>
+
+            <div class="article-image">
+                <div class="image-placeholder">
+                    <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1769471471/fcp-latest-results-section-with-active-btn_gk3crk.png" alt="Latest result with active button">
+                </div>
+                <p class="image-caption">Latest Results section showing today's games with auto-active selection</p>
+            </div>
+
+            <!-- VIDEO SECTION -->
+            <div class="video-container">
+                <h3>🎥 Watch: Forecast Central Panel in Action</h3>
+                <div class="video-wrapper">
+                    <!-- REPLACE THIS PLACEHOLDER WITH YOUR YOUTUBE VIDEO -->
+                    <div class="video-placeholder">
+                        Video Tutorial Coming Soon
+                        <p style="font-size: 1rem; margin-top: 1rem; opacity: 0.9;">
+                            Full walkthrough of the Forecast Central Panel features
+                        </p>
+                    </div>
+                    <!-- 
+                    TO ADD YOUR YOUTUBE VIDEO:
+                    Replace the div above with this code:
+                    
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+                        title="Forecast Central Panel Tutorial" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                    -->
+                </div>
+            </div>
+
+            <h2>Real-World Forecasting Workflow</h2>
+            <p>Let's walk through how a typical forecasting session works with the Forecast Central Panel:</p>
+
+            <h3>Example: Forecasting for Monday's Diamond Game</h3>
+
+            <ol>
+                <li><strong>Check Latest Results (Right):</strong> See that Sunday's Tota game just closed with numbers 12-35-67-89-90. The Diamond button automatically becomes active as it's the next game to play.</li>
+                
+                <li><strong>Analyze Classification (Left):</strong> Look up number 12 in the classification chart. You notice its counterpart is 21, bonanza is 32, and malta is 43.</li>
+                
+                <li><strong>Search Historical Data (Center):</strong> Use the search function to find how often 21 appears in position 2 after 12 appeared in recent draws. You discover a pattern!</li>
+                
+                <li><strong>Cross-Reference (All Sections):</strong> Check the Latest Results to see when this pattern last occurred. Scroll through Game Results to validate the pattern across multiple months.</li>
+                
+                <li><strong>Build Your Forecast:</strong> Based on the pattern identified across all three sections, you confidently select 21 for position 2 in your Diamond forecast.</li>
+            </ol>
+
+            <p>All of this happens without leaving the Forecast Central Panel. No tab switching, no losing your place, no broken concentration.</p>
+
+            <div class="tip-box">
+                <p><strong>💡 Pro Forecasting Tip:</strong> Keep the Forecast Central Panel open on a large screen or second monitor. The three-section layout is optimized for widescreen displays, giving you maximum information density without clutter.</p>
+            </div>
+
+            <h2>Key Benefits of Forecast Central Panel</h2>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h4>⚡ Speed</h4>
+                    <p>Cut your analysis time in half by having everything in one view</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🎯 Focus</h4>
+                    <p>Stay in the zone with no tab switching or navigation interruptions</p>
+                </div>
+                <div class="feature-card">
+                    <h4>📊 Comprehensive</h4>
+                    <p>Access all forecasting data from 2023 to the present moment</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔄 Real-Time</h4>
+                    <p>Automatic updates keep you current with active games</p>
+                </div>
+                <div class="feature-card">
+                    <h4>🔍 Searchable</h4>
+                    <p>Find specific number patterns across thousands of draws</p>
+                </div>
+                <div class="feature-card">
+                    <h4>💪 Professional</h4>
+                    <p>Built for serious forecasters who demand the best tools</p>
+                </div>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>Is Forecast Central Panel available on mobile?</h3>
+            <p>The Forecast Central Panel is optimized for desktop and tablet use due to its three-section layout requiring significant screen space. For mobile devices, we recommend using the individual tools from the main dashboard.</p>
+
+            <h3>Can I customize which sections are visible?</h3>
+            <p>Currently, all three sections are always visible to provide the complete forecasting experience. We're considering customization options based on user feedback.</p>
+
+            <h3>How often do the Latest Results update?</h3>
+            <p>Latest Results update in real-time as draws are published. The active game button automatically switches when one game closes and the next begins.</p>
+
+            <h3>Can I export or print data from Forecast Central Panel?</h3>
+            <p>Each section supports standard browser printing. We're working on direct export functionality for future updates.</p>
+
+            <h3>Does the search function work across all 25 games?</h3>
+            <p>Yes! The search functionality in the Game Results section searches across all games, making it easy to find patterns no matter where they occur.</p>
+
+            <h3>What's the difference between Game Results and Latest Results?</h3>
+            <p>Game Results shows all 25 games with complete historical data (2023-present) starting from the top (oldest draws). Latest Results focuses on today's active games with the most recent draws at the bottom, automatically highlighting the game currently playing.</p>
+
+            <div class="cta-box">
+                <h3>Ready to Experience Forecast Central Panel?</h3>
+                <p>Upgrade to Visual Lotto Board Pro and get access to the Forecast Central Panel, Moving Numbers, Tracked Patterns, and all our advanced forecasting tools.</p>
+                <p style="margin-top: 1.5rem;"><strong>Join thousands of successful forecasters using Pro features daily!</strong></p>
+                <a href="https://app.visuallottoboard.com" class="cta-button">Upgrade to Pro - ₦1,500/month</a>
+            </div>
+
+            <hr style="margin: 3rem 0; border: none; border-top: 1px solid #e5e7eb;">
+
+            <h2>What's Next?</h2>
+            <p>We're constantly improving the Forecast Central Panel based on your feedback. Upcoming enhancements include:</p>
+
+            <ul>
+                <li>Custom layout options</li>
+                <li>Data export functionality</li>
+                <li>Advanced filtering and sorting</li>
+                <li>Saved forecast templates</li>
+                <li>Pattern detection alerts</li>
+            </ul>
+
+            <p style="margin-top: 2rem;"><em>Have suggestions for the Forecast Central Panel? We'd love to hear from you! Drop a comment below or contact our support team.</em></p>
+
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e5e7eb;">
+                <p><strong>About Visual Lotto Board:</strong> Visual Lotto Board is Nigeria's leading lottery information platform, providing real-time results, classification charts, and professional forecasting tools for Premier Lotto (Baba Ijebu), Ghana Lotto, and other Nigerian lottery games.</p>
+                <p style="margin-top: 1rem;">
+                    <a href="https://visuallottoboard.com" style="color: var(--primary-blue); text-decoration: none;">Visit visuallottoboard.com</a> for free results or 
+                    <a href="https://app.visuallottoboard.com" style="color: var(--secondary-green); text-decoration: none;">upgrade to Pro</a> for the Forecast Central Panel and all premium features.
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Visual Lotto Board</h4>
+                <p>Nigeria's leading lottery information platform for Premier Lotto, Ghana Lotto, and more.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://app.visuallottoboard.com">Pro Forecast App</a></li>
+                    <!-- <li><a href="https://lottocl -->
