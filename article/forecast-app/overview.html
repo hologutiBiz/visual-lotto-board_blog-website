@@ -123,8 +123,14 @@
         }
 
         .category-icon {
-            font-size: 4rem;
+            /* font-size: 4rem; */
             margin-bottom: 1rem;
+        }
+        .category-icon img {
+            width: 20rem;
+            border-radius: 5px;
+            outline: ridge;
+            
         }
 
         .category-hero h1 {
@@ -197,6 +203,10 @@
             bottom: 0;
             background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 60%);
         }
+        .article-image img {
+    width: 100%;
+    height: 100%;     
+}
 
         .article-content {
             padding: 2rem;
@@ -410,7 +420,9 @@
             <div class="breadcrumb">
                 <a href="../../index.html">Blog</a> / Lotto Forecast App (Pro)
             </div>
-            <div class="category-icon">🎯</div>
+            <div class="category-icon">
+                <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1768802579/edit_dashboard-overview_xn3xqx.png" alt="">
+            </div>
             <h1>Lotto Forecast App (Pro)</h1>
             <p>Master the Visual Lotto Board Pro platform with expert guides on advanced forecasting tools, premium features, and strategies for serious lotto players</p>
             <span class="article-count">2 Articles</span>
@@ -435,7 +447,10 @@
 
             <!-- Article 2 - Moving Numbers -->
             <article class="article-card">
-                <div class="article-image">🔢</div>
+                <div class="article-image">
+                    <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1764840337/moving-number_interface-with_5_selected_kwxe2m.png" alt="">
+
+                </div>
                 <div class="article-content">
                     <span class="article-date">📅 November 2024</span>
                     <h2 class="article-title">
@@ -467,7 +482,7 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="../../index.html">Blog Home</a></li>
+                    <li><a href="/">Blog Home</a></li>
                     <!-- <li><a href="https://app.visuallottoboard.com">Pro Forecast App</a></li>
                     <li><a href="https://lottoclassificationchart.visuallottoboard.com">Classification Chart</a></li> -->
                 </ul>
@@ -475,7 +490,8 @@
             <div class="footer-section">
                 <h4>Blog Categories</h4>
                 <ul>
-                    <li><a href="#">Lotto Forecast App</a></li>
+                    <li><a href="../../updates/index.html">Updates</a></li>
+                    <!-- <li><a href="/article/forecast-app/overview.html">Lotto Forecast App</a></li> -->
                     <li><a href="../classification-chart/overview.html">Classification Chart</a></li>
                     <li><a href="../lotto-results/overview.html">Lotto Results</a></li>
                 </ul>
