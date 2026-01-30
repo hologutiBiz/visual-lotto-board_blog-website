@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecast App | Professional Insights</title>
+    <style>
+        :root {
+            --pro-navy: #0f172a;
+            --pro-gold: #fbbf24;
+            --pro-gold-dark: #d97706;
+            --glass: rgba(255, 255, 255, 0.95);
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f1f5f9; color: var(--pro-navy); line-height: 1.6; }
+
+        /* --- PRO NAVIGATION --- */
+        nav {
+            background: var(--pro-navy);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--pro-gold);
+        }
+        .logo { color: white; font-weight: 800; font-size: 1.4rem; text-decoration: none; }
+        .logo span { color: var(--pro-gold); }
+        
+        .nav-links a { color: #cbd5e1; text-decoration: none; margin-left: 20px; font-size: 0.9rem; font-weight: 500; }
+        .nav-links a.active { color: var(--pro-gold); }
+
+        /* --- HUB HEADER --- */
+        .hub-header {
+            background: white;
+            padding: 3rem 5%;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+        .hub-header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--pro-navy); }
+        .hub-header p { color: #64748b; max-width: 600px; margin: 0 auto; }
+
+        /* --- CATEGORY FILTER --- */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: white;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active { background: var(--pro-navy); color: white; border-color: var(--pro-navy); }
+
+        /* --- ARTICLE GRID --- */
+        .forecast-grid {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .forecast-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .forecast-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+
+        .card-image {
+            height: 180px;
+            background: #1e293b;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.2);
+            font-weight: bold;
+        }
+        .pro-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--pro-gold);
+            color: var(--pro-navy);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 800;
+        }
+
+        .card-content { padding: 1.5rem; flex-grow: 1; }
+        .card-date { font-size: 0.8rem; color: var(--pro-gold-dark); font-weight: 700; margin-bottom: 0.5rem; display: block; }
+        .card-content h3 { margin-bottom: 0.75rem; font-size: 1.25rem; }
+        .card-content p { color: #64748b; font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+        .card-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .read-more { color: var(--pro-navy); text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+        .read-more:hover { color: var(--pro-gold-dark); }
+
+        .accuracy-tag { font-size: 0.75rem; color: #059669; background: #ecfdf5; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+
+        @media (max-width: 600px) {
+            .forecast-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">FORECAST<span>APP</span></a>
+        <div class="nav-links">
+            <a href="index.html">Main Portal</a>
+            <a href="#" class="active">All Forecasts</a>
+            <a href="#">My Subscription</a>
+        </div>
+    </nav>
+
+    <header class="hub-header">
+        <h1>Forecast Intelligence Hub</h1>
+        <p>Premium mathematical breakdowns and pattern recognition articles for professional players.</p>
+        
+        <div class="filter-bar">
+            <button class="filter-btn active">All Strategies</button>
+            <button class="filter-btn">Weekly Trends</button>
+            <button class="filter-btn">Alpha Matrix</button>
+            <button class="filter-btn">Banker Keys</button>
+        </div>
+    </header>
+
+    <main class="forecast-grid">
+        
+        <article class="forecast-card">
+            <div class="card-image">
+                <span class="pro-badge">PRO CONTENT</span>
+                [Trend Graph]
+            </div>
+            <div class="card-content">
+                <span class="card-date">JANUARY 30, 2026</span>
+                <h3>The "Double-Edge" Matrix Strategy</h3>
+                <p>Analyzing the recurring vertical patterns found in this week's classification chart...</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="read-more">Unlock Article →</a>
+                <span class="accuracy-tag">88% Accuracy Rate</span>
+            </div>
+        </article>
+
+        <article class="forecast-card">
+            <div class="card-image">
+                <span class="pro-badge">PRO CONTENT</span>
+                [Pattern Map]
+            </div>
+            <div class="card-content">
+                <span class="card-date">JANUARY 28, 2026</span>
+                <h3>Banker Key: Mid-Week Breakdown</h3>
+                <p>A deep dive into the primary keys for the National weekly draw based on V4 logic.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="read-more">Unlock Article →</a>
+                <span class="accuracy-tag">75% Accuracy Rate</span>
+            </div>
+        </article>
+
+        <article class="forecast-card">
+            <div class="card-image">
+                <span class="pro-badge">PRO CONTENT</span>
+                [Data Table]
+            </div>
+            <div class="card-content">
+                <span class="card-date">JANUARY 25, 2026</span>
+                <h3>Sunday Alpha Sequence Forecast</h3>
+                <p>How the current moon-phase classification is affecting standard number groupings.</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="read-more">Unlock Article →</a>
+                <span class="accuracy-tag">91% Accuracy Rate</span>
+            </div>
+        </article>
+
+    </main>
+
+    <footer style="text-align: center; padding: 4rem 2rem; color: #94a3b8; font-size: 0.8rem; background: white; border-top: 1px solid var(--border);">
+        &copy; 2026 Forecast App Pro. For educational purposes only.
+    </footer>
+
+</body>
+</html>
+</body>
+</html>
