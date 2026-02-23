@@ -4,11 +4,6 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 // Initialize Supabase
 const SUPABASE = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-// console.log('✅ Supabase initialized');
-// console.log('🔍 URL:', SUPABASE_URL);
-// console.log('🔑 Key starts with:', SUPABASE_ANON_KEY.substring(0, 30) + '...');
-// console.log('🔑 Key length:', SUPABASE_ANON_KEY.length, 'characters');
-
 // DOM Elements
 const form = document.getElementById("newsletterForm");
 const emailInput = document.getElementById("emailInput");

@@ -77,7 +77,6 @@ nav {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    /* sticky: top;  */
 }
 
 nav ul { 
@@ -328,8 +327,6 @@ nav a:hover {
 }
 
 .newsletter-container {
-    /* max-width: 700px;
-    margin: 0 auto; */
     text-align: center;
 }
 
@@ -609,59 +606,82 @@ footer {
 
        
 
-        /* Responsive */
-        @media (max-width: 968px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
+/* Responsive */
+@media (max-width: 968px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 
-            .about-features {
-                grid-template-columns: 1fr;
-            }
-        }
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+}
 
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
 
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
+    .brand-wrapper {
+        display: flex;
+    }
+    .logo {
+        width: 50px;
+    }
+    .brand-name {
+        font-size: 1.2rem;
+    }
 
-            .hero h1 {
-                font-size: 2rem;
-            }
+    nav {
+        background-color: #059669;
+    }
 
-            .hero p {
-                font-size: 1.1rem;
-            }
+    nav ul {
+        display: grid;
+        /* flex-direction: column; */
+        width: 100%;
+        /* flex-wrap: wrap; */
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin: 0;
+        text-align: center;
+        background-color: #ef4444;
+    }
+    nav ul li a {
+        font-size: 0.7rem;
+    }
 
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
+    .hero h1 {
+        font-size: 2rem;
+    }
 
-            .section-title {
-                font-size: 2rem;
-            }
+    .hero p {
+        font-size: 1.1rem;
+    }
 
-            .articles-grid {
-                grid-template-columns: 1fr;
-            }
+    .hero-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 
-            .newsletter-form {
-                flex-direction: column;
-            }
+    .section-title {
+        font-size: 2rem;
+    }
 
-            .newsletter h2 {
-                font-size: 1.8rem;
-            }
-        }
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter h2 {
+        font-size: 1.8rem;
+    }
+}
 
 @media (max-width: 600px) {
     .newsletter h2 {
@@ -673,7 +693,7 @@ footer {
     }
 
     .newsletter-form button {
-        width: 100%;
+    width: 100%;
     }
 }
 
