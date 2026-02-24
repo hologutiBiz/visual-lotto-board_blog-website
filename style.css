@@ -634,20 +634,19 @@ footer {
         font-size: 1.2rem;
     }
 
-    nav {
+    /* nav {
         background-color: #059669;
-    }
+    } */
 
     nav ul {
-        display: grid;
-        /* flex-direction: column; */
+        /* display: grid; */
+        flex-direction: column;
         width: 100%;
-        /* flex-wrap: wrap; */
-        grid-template-columns: 1fr 1fr;
+        flex-wrap: wrap;
+        /* grid-template-columns: 1fr 1fr; */
         gap: 1rem;
         margin: 0;
         text-align: center;
-        background-color: #ef4444;
     }
     nav ul li a {
         font-size: 0.7rem;
