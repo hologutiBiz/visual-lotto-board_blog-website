@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <!-- Google tag (gtag.js) -->
+     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-M9582TWK');
+    </script>
+    <!-- Google tag manager ends -->
+
+    <!-- AdSense-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3639147338737274" crossorigin="anonymous"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting Weeks Feature | Lotto Forecast App By Visual Lotto Board</title>
+    <meta name="description" content="Introducing the 'Counting Weeks' algorithm for the Lotto Forecast App. Automatically track numbers intervals and identify due numbers for your next strategy.">
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2282c7;
+            --dark-blue: #1a5fa0;
+            --secondary-green: #059669;
+            --accent-gold: #f59e0b;
+            --bg-light-gray: #e8eaed;
+            --bg-lighter: #f9fafb;
+            --border-gray: #d0d0d0;
+            --bg-card: #f0f2f5;
+            --dark-bg: #1f2937;
+            --text-dark: #111827;
+            --text-light: #6b7280;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background-color: var(--bg-lighter);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .article-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .article-category-badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Article Content */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .article-content {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid var(--bg-light-gray);
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+        }
+
+         /* Video Container */
+        .video-container {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--bg-lighter);
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--bg-light-gray);
+        }
+          .strategy-tip { 
+            background: #e6fffa; 
+            border-left: 5px solid #319795; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 30px 0; 
+        }
+
+        /* Image Placeholders */
+        .article-image {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-gray);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 25px auto;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-light-gray));
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--text-light);
+            border: 2px dashed var(--border-gray);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* CTA Boxes */
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                /* flex-direction: column; */
+                gap: 1rem;
+                text-align: center;
+            }
+
+              nav ul li a {
+                text-decoration: underline;
+            }
+
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            /* .article-content */
+
+            .article-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+     <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9582TWK"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">Visual Lotto Board <span>Insights</span></a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="F-A-overview.html">Related Articles</a></li>
+                    <li><a href="https://app.visuallottoboard.com">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Header -->
+    <section class="article-header">
+        <div class="article-header-content">
+            <div class="breadcrumb">
+                <h1>Counting Weeks</h1>
+                <a href="/">Blog</a> / <a href="F-A-overview.html">Lotto Forecast App (Pro)</a>
+            </div>
+            <span class="article-category-badge">Lotto Forecast App (Pro)</span>
+            <h1>New Feature: Counting Weeks</h1>
+            <div class="article-meta">
+            <time datetime="2026-03-07">📅 March 7, 2026</time>
+                <span>⏱️ 4 min read</span>
+                <span>👤 Visual Lotto Board Team</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="article-container">
+        <article class="article-content">
+        <!-- <header class="article-header">
+            <h1>New Feature: Automate Your Strategy with 'Counting Weeks'</h1>
+            <p class="subtitle">Introducing our powerful new algorithm for tracking numerical intervals<span class="pro-badge">PRO</span></p>
+        </header> -->
+
+        <!-- <section class="content"> -->
+            <p>Successful lotto forecasting is often about pattern recognition rather than simple guesswork. We are excited to announce a major upgrade to the <i>Lotto Forecast App</i> designed specifically for our strategic players: <b>Counting Weeks</b>.</p>
+            
+            <p>This feature automates one of the most tedious and critical manual forecasting techniques—tracking the historical cycles of numbers—to give you a data-driven edge in your next draw.</p>
+
+            <hr>
+
+            <div class="video-container">
+                <h2>Watch: Counting Weeks in Action</h2>
+                <p>See a full walkthrough of how the new feature works and how to use it in your next forecasting session.</p>
+                <div class="video-placeholder" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: 8px; margin: 20px 0;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-wIr_E27WD4?si=71vhwt86S4MGEnwz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2>What is 'Counting Weeks'?</h2>
+            <p>Counting Weeks is an algorithmic analysis of numerical intervals. It identifies numbers that are expected to appear in upcoming draws based on the specific, recent steps and cycles they have established.</p>
+            
+            <p>If a number consistently appears at regular intervals—for instance, every 3 or 5 draws—our engine flags it as a high-potential number "due" based on its historical performance.</p>
+
+            <div class="strategy-tip">
+                <strong>Important Definition:</strong> The Counting Weeks tool does <strong>not</strong> provide predictions (those remain a separate Pro feature). Instead, it generates <strong>Expectations</strong>. These numbers are identified purely through algorithmic step-analysis of recent data. Their purpose is to increase your winning probability by validating your strategy with historical evidence.
+            </div>
+
+            <h2>How to Use the Counting Weeks UI</h2>
+            <p>We’ve designed the Counting Weeks interface to be as intuitive as it is powerful. It displays your data through a seamless calendar-based approach.</p>
+
+            <h3>1. The Calendar Navigator</h3>
+            <p>Upon launch, the UI defaults to the <b>current day</b>. It automatically detects the day of the week (e.g., Wednesday) and displays all <i>Baba Ijebu</i> games scheduled to play that day.</p>
+            
+            <p>To view the Counting Weeks data for previous or upcoming days, simply use the 7 dedicated day buttons (Sunday to Saturday) to navigate the week.</p>
+            
+             <!-- IMAGE PLACEHOLDER 2: Example Visualization -->
+            <div class="article-image">
+                <div class="image-placeholder">
+                    <img class="ui-screenshot" src="https://res.cloudinary.com/ddatfadov/image/upload/v1773224342/blog_CW-UI_Calendar-nav_oillx5.png" alt="Screenshot of the Counting Weeks Calendar Navigation">
+                </div>
+                <p class="image-caption">Visual representation of to navite different days Counting Weeks games</p>
+            </div>
+
+            <h3>2. Game Data & The Summary View</h3>
+            <p>Each game displayed has its own dedicated <b>Counting Weeks</b> data card. This summary gives you a quick snapshot of the strategy at a glance:</p>
+            <ul>
+                <li>Total numbers currently identified in a cycle.</li>
+                <li>The number(s) and their specific intervals (weeks) they are tracking (e.g., "3w," "5w").</li>
+            </ul>
+
+             <div class="article-image">
+                <div class="image-placeholder">
+                    <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1773228951/blog_CW-UI_Game-card-midweek_ayjnhn.png" alt="Screenshot of the Game Data Summary Card" class="ui-screenshot">
+                </div>
+                <p class="image-caption">Game data interface with it dedicated Counting Weeks</p>
+            </div>
+
+
+            <h3>3. Deep Dive: Table View and Highlights</h3>
+            <p>For each game, a <b>"View"</b> button unlocks the full analytical breakdown. This action renders a comprehensive game table that <b>highlights</b> every number identified within a "Counting Weeks" cycle for that specific game.</p>
+            
+            <p>This view allows you to verify the algorithm’s findings and cross-reference them with your own forecasting methods.</p>
+
+            <div class="article-image">
+                <div class="image-placeholder">
+                    <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1773229343/blog_CW-UI_game-table-analyses_kdwzkk.png" alt="Screenshot of the Game Table with Highlights" class="ui-screenshot">
+                </div>
+                <p class="image-caption">The Game result view that highlights numbers in counting weeks</p>
+            </div>
+
+            <div class="cta-box">
+                <h3>Unlock Your Strategic Edge</h3>
+                <p>The Counting Weeks feature is exclusive to our <strong>Pro Subscribers</strong>. Take the manual labour out of your forecasting and start using our automated interval tracking today.</p>
+                <a class="cta-button" href="https://app.visuallottoboard.com/dashboard/counting-weeks" class="btn-pro" target="_blank">Access Counting Weeks</a>
+                <p style="font-size: 0.85rem; color: #add8e6; margin-top: 10px;"><em>Requires active Pro Subscription.</em></p>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Visual Lotto Board</h4>
+                <p>Nigeria's leading lottery information platform for Premier Lotto, Ghana Lotto, and more.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <!-- <li><a href="./registration-guide.html">Registration guide</a></li> -->
+                    <!-- <li><a href="https://lottoclassificationchart.visuallottoboard.com">Classification Chart</a></li> -->
+                    <li><a href="https://visuallottoboard.com/about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Articles Hub</h4>
+                <ul>
+                    <li><a href="./overview.html">Lotto Forecast App</a></li>
+                    <li><a href="../classification-chart/overview.html">Classification Chart</a></li>
+                    <li><a href="../lotto-results/overview.html">Lotto Results</a></li>
+                    <li><a href="../../updates/index.html">Updates & Announcements</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://facebook.com/visuaLottoBoard" target="_blank" referrerpolicy="no-referrer">Facebook</a></li>
+                    <li><a href="https://x.com/visuaLottoBoard" target="_blank" referrerpolicy="no-referrer">X (Formally Twitter)</a></li>
+                    <li><a href="https://www.instagram.com/visualottoboard" target="_blank" target="_blank" referrerpolicy="no-referrer">Instagram</a></li>
+                    <li><a href="https://visuallottoboard.com/contact" target="_blank">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Visual Lotto Board. All rights reserved.</p>
+        </div>
+    </footer>
+
+     <!-- vlb_blog_ads -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3639147338737274"
+        data-ad-slot="9016871935"
+        data-ad-format="auto"
+        data-full-width-responsive="true">
+    </ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
+</html>
