@@ -267,7 +267,7 @@
             border: 1px solid var(--bg-light-gray);
         }
 
-        /* .video-placeholder {
+        /* .video-wrapper {
             background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
             color: white;
             padding: 4rem 2rem;
@@ -379,7 +379,28 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
+
+            .video-wrapper {
+                position: relative;
+                width: 100%;
+            }
         }
+
+         @media (max-width: 559px) {
+                .video-wrapper {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    
+                }
+
+                .video-wrapper iframe {
+                    
+                }
+            }
     </style>
 </head>
 <body>
@@ -533,7 +554,6 @@
                     <img src="/assets/LFA/lottoforecast-BabaIjebu-MN-highlighted.webp" alt="">
                     <hr>
                     <img src="/assets/LFA/lottoforecast-moving-number-display.png" alt="">
-                    <img src="" alt="">
                 </div>
                 <p class="image-caption">Easy steps to access Moving Numbers from your dashboard</p>
             </div>
@@ -568,8 +588,8 @@
             <!-- VIDEO PLACEHOLDER -->
             <div class="video-container">
                 <h3>Watch: Moving Numbers in Action</h3>
-                <div class="video-placeholder">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aVCQqTSRybY?si=b8BeCHL_WeGbQJDO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="video-wrapper">
+                    <iframe height="315" src="https://www.youtube.com/embed/aVCQqTSRybY?si=b8BeCHL_WeGbQJDO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <p class="image-caption">Tutorial video</p>
             </div>
