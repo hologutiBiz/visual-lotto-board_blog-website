@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-M9582TWK');
+    </script>
+    <!-- Google tag manager ends -->
+
+    <!-- AdSense intentionally omitted for this article -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnimoLotto Early Access | AI Lotto Assistant (Beta)</title>
+    <meta name="description" content="OnimoLotto, an AI-powered lotto assistant, is in Beta for Lotto Forecast App subscribers. See what it does, who can access it, and what comes next.">
+
+    <meta property="og:url" content="https://blog.visuallottoboard.com/updates/onimolotto-early-access">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="OnimoLotto Early Access | AI Lotto Assistant (Beta)">
+    <meta property="og:description" content="OnimoLotto, an AI-powered lotto assistant, is in Beta for Lotto Forecast App subscribers. See what it does, who can access it, and what comes next.">
+    <!-- TODO: replace with the Cloudinary URL of the "AI Assistant (Beta)" feature tile -->
+    <meta property="og:image" content="CLOUDINARY_FEATURE_TILE_URL_HERE">
+
+    <!-- twitter-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@visualottoboard">
+    <meta name="twitter:title" content="OnimoLotto Early Access | AI Lotto Assistant (Beta)">
+    <meta name="twitter:description" content="OnimoLotto, an AI-powered lotto assistant, is in Beta for Lotto Forecast App subscribers. See what it does, who can access it, and what comes next.">
+    <!-- TODO: same Cloudinary URL as og:image -->
+    <meta name="twitter:image" content="CLOUDINARY_FEATURE_TILE_URL_HERE">
+    <meta name="twitter:url" content="https://blog.visuallottoboard.com/updates/onimolotto-early-access">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2282c7;
+            --dark-blue: #1a5fa0;
+            --secondary-green: #059669;
+            --accent-gold: #f59e0b;
+            --bg-light-gray: #e8eaed;
+            --bg-lighter: #f9fafb;
+            --border-gray: #d0d0d0;
+            --bg-card: #f0f2f5;
+            --dark-bg: #1f2937;
+            --text-dark: #111827;
+            --text-light: #6b7280;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background-color: var(--bg-lighter);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .article-header-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .breadcrumb a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .article-category-badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .article-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Article Content */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .article-content {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid var(--bg-light-gray);
+        }
+
+        .article-content h2 {
+            color: var(--primary-blue);
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .article-content ul {
+            margin: 1.25rem 0 1.25rem 2rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        .strategy-tip {
+            background: #e6fffa;
+            border-left: 5px solid #319795;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        /* Images */
+        .article-image {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-gray);
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-light-gray));
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--text-light);
+            border: 2px dashed var(--border-gray);
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* CTA Boxes */
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-bg);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                text-align: center;
+            }
+
+            nav ul li a {
+                text-decoration: underline;
+            }
+
+            .article-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .article-container {
+                margin: 0;
+            }
+
+            .article-content {
+                margin: 0 0;
+                padding: 2rem 1.5rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .cta-button {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9582TWK"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">Visual Lotto Board <span>Insights</span></a>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="./index.html">Updates</a></li>
+                    <!-- TODO: add OnimoLotto nav item once its main page exists -->
+                    <li><a href="https://app.visuallottoboard.com">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Header -->
+    <section class="article-header">
+        <div class="article-header-content">
+            <div class="breadcrumb">
+                <a href="/">Blog</a> / <a href="./index.html">Updates</a>
+            </div>
+            <span class="article-category-badge">Updates · OnimoLotto (Beta)</span>
+            <h1>OnimoLotto Early Access: An AI-Powered Lotto Assistant, Now in Beta</h1>
+            <div class="article-meta">
+                <time datetime="2026-10-01">📅 October 2026</time>
+                <span>⏱️ 3 min read</span>
+                <span>👤 Visual Lotto Board Team</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="article-container">
+        <article class="article-content">
+
+            <p>Visual Lotto Board is beginning an early access rollout of <strong>OnimoLotto</strong>, an AI-powered lotto assistant for forecast, analysis and results. It is still in Beta. This update explains what OnimoLotto is, who can use it today, and how we are approaching what comes next.</p>
+
+            <h2>What is OnimoLotto?</h2>
+            <p>OnimoLotto is an assistant built into the Lotto Forecast App dashboard. Instead of moving between screens to find information, you can ask a question in plain language and get an answer drawn from the forecast, pattern and classification data already on your dashboard.</p>
+
+            <p>The aim is to make that data easier to explore and understand, especially for people who are still learning how the different tools fit together.</p>
+
+            <div class="article-image">
+                <div class="image-placeholder">
+                    <!-- TODO: replace src with the Cloudinary URL of the "AI Assistant (Beta)" feature tile ONLY.
+                         Do NOT use the chat-interface screenshot. -->
+                    <img src="CLOUDINARY_FEATURE_TILE_URL_HERE" alt="AI Assistant (Beta) feature tile: Lotto forecast powered by OnimoLotto">
+                </div>
+                <p class="image-caption">The AI Assistant (Beta) tile in the Lotto Forecast App, powered by OnimoLotto</p>
+            </div>
+
+            <!--
+            OPTIONAL SECTION: enable only after VLB confirms real prompts that work today.
+            Suggested prompts must clearly be about exploring data, not picking numbers.
+
+            <h2>Examples of what you can ask</h2>
+            <ul>
+                <li>[Confirmed prompt 1]</li>
+                <li>[Confirmed prompt 2]</li>
+            </ul>
+            -->
+
+            <h2>What OnimoLotto is not</h2>
+            <p>OnimoLotto does not predict winning numbers, guarantee outcomes, or tell anyone what to play. Lotto draws are random, and no tool can change that. OnimoLotto is an exploration and explanation tool for the data and patterns the Lotto Forecast App tracks.</p>
+
+            <div class="strategy-tip">
+                <strong>Please note:</strong> Pattern and classification data describes what has happened in past draws. It does not indicate what will happen in future draws. Play responsibly and only within your means.
+            </div>
+
+            <h2>Who has access right now?</h2>
+            <p>During Beta, OnimoLotto is available only to existing Lotto Forecast App subscribers, and only as a feature inside the app. It is not yet a standalone product, and it does not have its own public page or app.</p>
+
+            <p>We are starting with a smaller group so we can see how the assistant is used and improve it before opening it up more widely.</p>
+
+            <h2>What we are working on</h2>
+            <p>OnimoLotto is still in development. Our focus is on refining how it understands questions, improving the clarity of its answers, and expanding what it can help users explore.</p>
+
+            <p>We plan to make OnimoLotto available to the wider public. When it is ready, we will announce it here and on our official channels. Until then, this page is the best place to follow progress.</p>
+
+            <div class="cta-box">
+                <h3>Try OnimoLotto in Beta</h3>
+                <p>If you are a Lotto Forecast App subscriber, you can find the AI Assistant (Beta) on your dashboard.</p>
+                <!-- TODO: add the final dashboard link -->
+                <a class="cta-button" href="#" target="_blank">Open your Lotto Forecast dashboard</a>
+            </div>
+
+            <h2>Share your feedback</h2>
+            <p>Beta feedback shapes what we build next. If something is unclear, missing, or not working as you expect, write to us at <a href="mailto:support@visuallottoboard.com">support@visuallottoboard.com</a>.</p>
+
+            <hr style="margin: 3rem 0; border: none; border-top: 1px solid #e5e7eb;">
+
+            <p style="font-size: 0.95rem;"><strong>About Visual Lotto Board:</strong> Visual Lotto Board is a Nigerian lotto analytics and results platform offering daily results, classification tools and pattern-tracking analytics. Visit <a href="https://visuallottoboard.com" style="color: var(--primary-blue); text-decoration: none;">visuallottoboard.com</a> to learn more.</p>
+
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Visual Lotto Board</h4>
+                <p>Nigerian lotto analytics and results platform.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://visuallottoboard.com/about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Articles Hub</h4>
+                <ul>
+                    <li><a href="/article/forecast-app/F-A-overview.html">Lotto Forecast App</a></li>
+                    <li><a href="/article/classification-chart/overview.html">Classification Chart</a></li>
+                    <li><a href="/article/lotto-results/lr-overview.html">Lotto Results</a></li>
+                    <li><a href="./index.html">Updates &amp; Announcements</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://facebook.com/visuaLottoBoard" target="_blank" referrerpolicy="no-referrer">Facebook</a></li>
+                    <li><a href="https://x.com/visuaLottoBoard" target="_blank" referrerpolicy="no-referrer">X (Formerly Twitter)</a></li>
+                    <li><a href="https://www.instagram.com/visualottoboard" target="_blank" referrerpolicy="no-referrer">Instagram</a></li>
+                    <li><a href="https://visuallottoboard.com/contact" target="_blank">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Visual Lotto Board. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
