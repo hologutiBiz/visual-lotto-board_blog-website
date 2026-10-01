@@ -22,16 +22,14 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="OnimoLotto Early Access | AI Lotto Assistant (Beta)">
     <meta property="og:description" content="OnimoLotto, an AI-powered lotto assistant, is in Beta for Lotto Forecast App subscribers. See what it does, who can access it, and what comes next.">
-    <!-- TODO: replace with the Cloudinary URL of the "AI Assistant (Beta)" feature tile -->
-    <meta property="og:image" content="CLOUDINARY_FEATURE_TILE_URL_HERE">
+    <meta property="og:image" content="https://res.cloudinary.com/ddatfadov/image/upload/v1790872776/Lotto-Forecast-App_main-dashboard_full-esktop_ohu8zh.png">
 
     <!-- twitter-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@visualottoboard">
     <meta name="twitter:title" content="OnimoLotto Early Access | AI Lotto Assistant (Beta)">
     <meta name="twitter:description" content="OnimoLotto, an AI-powered lotto assistant, is in Beta for Lotto Forecast App subscribers. See what it does, who can access it, and what comes next.">
-    <!-- TODO: same Cloudinary URL as og:image -->
-    <meta name="twitter:image" content="CLOUDINARY_FEATURE_TILE_URL_HERE">
+    <meta name="twitter:image" content="https://res.cloudinary.com/ddatfadov/image/upload/v1790872776/Lotto-Forecast-App_main-dashboard_full-esktop_ohu8zh.png">
     <meta name="twitter:url" content="https://blog.visuallottoboard.com/updates/onimolotto-early-access">
 
     <style>
@@ -215,7 +213,7 @@
 
         .image-placeholder {
             background: linear-gradient(135deg, var(--bg-card), var(--bg-light-gray));
-            padding: 4rem 2rem;
+            padding: 1rem;
             text-align: center;
             color: var(--text-light);
             border: 2px dashed var(--border-gray);
@@ -225,6 +223,14 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        /* Keep phone screenshots from stretching too wide on small tablets */
+        @media (max-width: 768px) {
+            .article-image picture img {
+                max-width: 360px;
+                margin: 0 auto;
+            }
         }
 
         .image-caption {
@@ -381,8 +387,8 @@
             <div class="breadcrumb">
                 <a href="/">Blog</a> / <a href="./index.html">Updates</a>
             </div>
-            <span class="article-category-badge">Updates · OnimoLotto (Beta)</span>
-            <h1>OnimoLotto Early Access: An AI-Powered Lotto Assistant, Now in Beta</h1>
+            <span class="article-category-badge">Announcements · OnimoLotto (Beta)</span>
+            <h1>OnimoLotto: An AI-Powered Lotto Assistant, Now in Beta</h1>
             <div class="article-meta">
                 <time datetime="2026-10-01">📅 October 2026</time>
                 <span>⏱️ 3 min read</span>
@@ -394,21 +400,32 @@
     <main class="article-container">
         <article class="article-content">
 
-            <p>Visual Lotto Board is beginning an early access rollout of <strong>OnimoLotto</strong>, an AI-powered lotto assistant for forecast, analysis and results. It is still in Beta. This update explains what OnimoLotto is, who can use it today, and how we are approaching what comes next.</p>
+            <p>Visual Lotto Board is announcing <strong>OnimoLotto</strong>, an AI-powered lotto assistant for forecast, analysis and results. It is still in Beta. This update explains what OnimoLotto is, who can use it today, and how we are approaching what comes next.</p>
 
             <h2>What is OnimoLotto?</h2>
-            <p>OnimoLotto is an assistant built into the Lotto Forecast App dashboard. Instead of moving between screens to find information, you can ask a question in plain language and get an answer drawn from the forecast, pattern and classification data already on your dashboard.</p>
+            <p>OnimoLotto is an assistant designed to help you explore lotto forecast, pattern and results data from Visual Lotto Board. During Beta, it is built into the Lotto Forecast App dashboard. Instead of moving between screens to find information, you can ask a question in plain language and get an answer drawn from the data already available on the platform.</p>
 
             <p>The aim is to make that data easier to explore and understand, especially for people who are still learning how the different tools fit together.</p>
 
+            <!-- Responsive screenshot: mobile image on screens up to 768px wide, desktop image otherwise -->
             <div class="article-image">
                 <div class="image-placeholder">
-                    <!-- TODO: replace src with the Cloudinary URL of the "AI Assistant (Beta)" feature tile ONLY.
-                         Do NOT use the chat-interface screenshot. -->
-                    <img src="CLOUDINARY_FEATURE_TILE_URL_HERE" alt="AI Assistant (Beta) feature tile: Lotto forecast powered by OnimoLotto">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="https://res.cloudinary.com/ddatfadov/image/upload/v1790872776/lotto-forecast-app_mobile_maindashboard_AI-Assistant_bbjv4b.webp">
+                        <img src="https://res.cloudinary.com/ddatfadov/image/upload/v1790872776/Lotto-Forecast-App_main-dashboard_full-esktop_ohu8zh.png" alt="Lotto Forecast App dashboard showing the AI Assistant (Beta) powered by OnimoLotto" loading="lazy">
+                    </picture>
                 </div>
-                <p class="image-caption">The AI Assistant (Beta) tile in the Lotto Forecast App, powered by OnimoLotto</p>
+                <p class="image-caption">The Lotto Forecast App dashboard with the AI Assistant (Beta), powered by OnimoLotto</p>
             </div>
+
+            <!--
+            HELD BACK: chat-interface screenshots (desktop and mobile).
+            Before adding them, confirm neither shows the "Forecast Jackpot" button or a generated "number pool",
+            since those imply number prediction. If they are clear, replace the image above or add a second block
+            using the same <picture> pattern:
+              desktop: .../Lotto-Forecast-App_desktop_AI-Assistant-chat-interface_llbwtk.png
+              mobile:  .../Lotto-forecast-app_AI-Assistant-chat-interface_mobile_ujei5j.webp
+            -->
 
             <!--
             OPTIONAL SECTION: enable only after VLB confirms real prompts that work today.
@@ -425,24 +442,23 @@
             <p>OnimoLotto does not predict winning numbers, guarantee outcomes, or tell anyone what to play. Lotto draws are random, and no tool can change that. OnimoLotto is an exploration and explanation tool for the data and patterns the Lotto Forecast App tracks.</p>
 
             <div class="strategy-tip">
-                <strong>Please note:</strong> Pattern and classification data describes what has happened in past draws. It does not indicate what will happen in future draws. Play responsibly and only within your means.
+                <strong>Please note:</strong> Pattern and analysis data describes what has happened in past draws. It does not predict or guarantee what will happen in future draws. Play responsibly and only within your means.
             </div>
 
             <h2>Who has access right now?</h2>
-            <p>During Beta, OnimoLotto is available only to existing Lotto Forecast App subscribers, and only as a feature inside the app. It is not yet a standalone product, and it does not have its own public page or app.</p>
+            <p>During Beta, OnimoLotto is available only to existing Lotto Forecast App subscribers, and only as a feature inside the app. It is not yet available to the general public.</p>
 
             <p>We are starting with a smaller group so we can see how the assistant is used and improve it before opening it up more widely.</p>
 
             <h2>What we are working on</h2>
-            <p>OnimoLotto is still in development. Our focus is on refining how it understands questions, improving the clarity of its answers, and expanding what it can help users explore.</p>
+            <p>OnimoLotto is still in development and is updated regularly. Our focus is on refining how it understands questions, improving the clarity of its answers, and expanding what it can help users explore.</p>
 
             <p>We plan to make OnimoLotto available to the wider public. When it is ready, we will announce it here and on our official channels. Until then, this page is the best place to follow progress.</p>
 
             <div class="cta-box">
                 <h3>Try OnimoLotto in Beta</h3>
                 <p>If you are a Lotto Forecast App subscriber, you can find the AI Assistant (Beta) on your dashboard.</p>
-                <!-- TODO: add the final dashboard link -->
-                <a class="cta-button" href="#" target="_blank">Open your Lotto Forecast dashboard</a>
+                <a class="cta-button" href="https://lottoforecast.visuallottoboard.com/dashboard/ai-assistant" target="_blank" rel="noopener">Open your Lotto Forecast dashboard</a>
             </div>
 
             <h2>Share your feedback</h2>
